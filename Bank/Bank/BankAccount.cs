@@ -5,6 +5,7 @@ namespace Bank
     class BankAccount
     {
         private static ulong _PrevAccNumb = 10000000000000000000;
+
         private readonly ulong _AccountNumb;
         private decimal _Balance;
         private readonly AccountType _AccountType;
@@ -30,15 +31,38 @@ namespace Bank
 
         #endregion
 
+        #region Ctors
+
+        /// <summary> Создать экземпляр класса BankAccount. </summary>
+        public BankAccount() { AccountNumb = GenerateAccNumb(); }
+
         /// <summary>Создать экземпляр класса BankAccount.</summary>
-        /// <param name="accNumb">Номер банковского счета.</param>
+        /// <param name="balance">Текущий баланс для счета.</param>
+        public BankAccount(decimal balance)
+        {
+            AccountNumb = GenerateAccNumb();
+            _Balance = balance;
+        }
+
+        /// <summary>Создать экземпляр класса BankAccount.</summary>
         /// <param name="accType">Тип банковского счета.</param>
         public BankAccount(AccountType accType)
         {
-            //каждый новый номер счета увеличивается на 1.
             AccountNumb = GenerateAccNumb();
             AccountType = accType;
         }
+
+        /// <summary>Создать экземпляр класса BankAccount.</summary>
+        /// <param name="accType">Тип банковского счета.</param>
+        /// <param name="balance">Номер банковского счета.</param>
+        public BankAccount(AccountType accType, decimal balance)
+        {
+            AccountNumb = GenerateAccNumb();
+            _AccountType = accType;
+            _Balance = balance;
+        }
+
+        #endregion
 
         #region AccountMethods
 
