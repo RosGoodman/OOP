@@ -36,11 +36,15 @@ namespace Bank
         public BankAccount(AccountType accType)
         {
             //каждый новый номер счета увеличивается на 1.
-            AccountNumb = _PrevAccNumb++;
+            AccountNumb = GenerateAccNumb();
             AccountType = accType;
         }
 
         #region AccountMethods
+
+        /// <summary>Метод генерирует новый номер счета.</summary>
+        /// <returns>Новый номер счета.</returns>
+        public static ulong GenerateAccNumb() => _PrevAccNumb++;
 
         /// <summary>Положить сумму на счет.</summary>
         /// <param name="sum">Сумма, которая будет добавлена на счет.</param>
