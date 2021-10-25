@@ -1,8 +1,10 @@
-﻿
+﻿using System;
+
 namespace Bank
 {
     class BankAccount
     {
+        private static ulong _PrevAccNumb = 10000000000000000000;
         private readonly ulong _AccountNumb;
         private decimal _Balance;
         private readonly AccountType _AccountType;
@@ -31,9 +33,10 @@ namespace Bank
         /// <summary>Создать экземпляр класса BankAccount.</summary>
         /// <param name="accNumb">Номер банковского счета.</param>
         /// <param name="accType">Тип банковского счета.</param>
-        public BankAccount(ulong accNumb, AccountType accType)
+        public BankAccount(AccountType accType)
         {
-            AccountNumb = accNumb;
+            //каждый новый номер счета увеличивается на 1.
+            AccountNumb = _PrevAccNumb++;
             AccountType = accType;
         }
 
@@ -51,12 +54,19 @@ namespace Bank
         /// <param name="sum">Сумма, которая будет снята со счета.</param>
         public decimal WithdrawSum(decimal sum) 
         {
-            if(_Balance < sum) return _Balance;
+            if(_Balance < sum)
+            {
+                Console.WriteLine("Insufficient funds in the account.");
+                return _Balance;
+            }
 
             _Balance -= sum;
             return _Balance;
         }
 
+        /// <summary>Получить строку с данными об аккаунте.</summary>
+        /// <returns>Номер счета, баланс, тип аккаунта.</returns>
+        /// <remarks>Метод переопределент только для удобства в данной задаче.</remarks>
         public override string ToString()
         {
             return $"AccNumber: {_AccountNumb}\n" +

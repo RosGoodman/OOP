@@ -6,8 +6,7 @@ namespace Bank
     {
         static void Main(string[] args)
         {
-            ulong accNumb = 13245678900987654321;
-            BankAccount account = new BankAccount(accNumb, AccountType.Current);
+            BankAccount account = new BankAccount(AccountType.Current);
 
             Console.WriteLine(account.ToString());
 
@@ -16,6 +15,19 @@ namespace Bank
 
             account.WithdrawSum(100M);
             Console.WriteLine(account.ToString());
+
+            BankAccount account2 = new BankAccount(AccountType.Correspondent);
+
+            Console.WriteLine(account2.ToString());
+
+            account2.AddSum(123.4M);
+            Console.WriteLine(account2.ToString());
+
+            account2.WithdrawSum(100M);
+            Console.WriteLine(account2.ToString());
+
+            account2.WithdrawSum(100M);
+            Console.WriteLine(account2.ToString());
 
             Console.ReadLine();
         }
