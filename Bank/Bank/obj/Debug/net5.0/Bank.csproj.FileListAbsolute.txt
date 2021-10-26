@@ -5,7 +5,6 @@ C:\Users\user252\Desktop\Prog C Sharp\Geek\HomeWorks\ООП\OOP\Bank\Bank\bin\De
 C:\Users\user252\Desktop\Prog C Sharp\Geek\HomeWorks\ООП\OOP\Bank\Bank\bin\Debug\net5.0\Bank.dll
 C:\Users\user252\Desktop\Prog C Sharp\Geek\HomeWorks\ООП\OOP\Bank\Bank\bin\Debug\net5.0\ref\Bank.dll
 C:\Users\user252\Desktop\Prog C Sharp\Geek\HomeWorks\ООП\OOP\Bank\Bank\bin\Debug\net5.0\Bank.pdb
-C:\Users\user252\Desktop\Prog C Sharp\Geek\HomeWorks\ООП\OOP\Bank\Bank\obj\Debug\net5.0\Bank.csproj.AssemblyReference.cache
 C:\Users\user252\Desktop\Prog C Sharp\Geek\HomeWorks\ООП\OOP\Bank\Bank\obj\Debug\net5.0\Bank.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\user252\Desktop\Prog C Sharp\Geek\HomeWorks\ООП\OOP\Bank\Bank\obj\Debug\net5.0\Bank.AssemblyInfoInputs.cache
 C:\Users\user252\Desktop\Prog C Sharp\Geek\HomeWorks\ООП\OOP\Bank\Bank\obj\Debug\net5.0\Bank.AssemblyInfo.cs

@@ -13,3 +13,4 @@ C:\Users\user252\Desktop\Prog C Sharp\Geek\HomeWorks\ООП\OOP\Bank\Task2\obj\D
 C:\Users\user252\Desktop\Prog C Sharp\Geek\HomeWorks\ООП\OOP\Bank\Task2\obj\Debug\net5.0\ref\Task2.dll
 C:\Users\user252\Desktop\Prog C Sharp\Geek\HomeWorks\ООП\OOP\Bank\Task2\obj\Debug\net5.0\Task2.pdb
 C:\Users\user252\Desktop\Prog C Sharp\Geek\HomeWorks\ООП\OOP\Bank\Task2\obj\Debug\net5.0\Task2.genruntimeconfig.cache
+C:\Users\user252\Desktop\Prog C Sharp\Geek\HomeWorks\ООП\OOP\Bank\Task2\obj\Debug\net5.0\Task2.csproj.AssemblyReference.cache
