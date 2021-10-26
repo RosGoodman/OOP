@@ -66,7 +66,16 @@ namespace Bank
 
         #region AccountMethods
 
-        /// <summary>Метод генерирует новый номер счета.</summary>
+        /// <summary> Получить перевод с указанного счета. </summary>
+        /// <param name="senderAccount">Счет отправитель перевода.</param>
+        /// <param name="sum">Сумма перевода.</param>
+        public void ReceiveMoneyTransfer(BankAccount senderAccount, decimal sum)
+        {
+            senderAccount.WithdrawSum(sum);
+            this.AddSum(sum);
+        }
+
+        /// <summary>Генерировать новый номер счета.</summary>
         /// <returns>Новый номер счета.</returns>
         public static ulong GenerateAccNumb() => _PrevAccNumb++;
 
