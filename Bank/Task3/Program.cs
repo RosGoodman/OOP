@@ -8,7 +8,7 @@ namespace Task3
         /// <summary> Получить адрес почты. </summary>
         /// <param name="s">Строка для поиска адресов.</param>
         /// <returns>Адрес почты.</returns>
-        delegate string Separator(string s);
+        delegate string Separator(ref string s);
 
         static void Main(string[] args)
         {
@@ -38,7 +38,7 @@ namespace Task3
                     {
                         //тут можно было просто вызывать метод SeparateEmails(line),
                         //но мне почему-то не понтарвилось, оставил с делегатом
-                        sw.WriteLine(sep(line));
+                        sw.WriteLine(sep(ref line));
                     }
                 }
             }
@@ -51,7 +51,7 @@ namespace Task3
         /// <summary> Получить адрес почты. </summary>
         /// <param name="s">Строка для поиска адресов.</param>
         /// <returns>Адрес почты.</returns>
-        static string SeparateEmails(string s)
+        static string SeparateEmails(ref string s)
         {
             return s.Split(" & ")[1];
         }
