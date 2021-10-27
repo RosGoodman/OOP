@@ -5,75 +5,55 @@ namespace Task3
 {
     class Program
     {
+        /// <summary> Получить адрес почты. </summary>
+        /// <param name="s">Строка для поиска адресов.</param>
+        /// <returns>Адрес почты.</returns>
+        delegate string Separator(string s);
+
         static void Main(string[] args)
         {
             string path = Environment.CurrentDirectory + "\\data";
-            string mails = string.Empty;
+            string readFileName = "\\UsersData.txt";
+            string writeFileName = "\\mails.txt";
 
-            string line = ReadFileTXT($"{path}\\UsersData.txt");
-            string[] words = line.Split(' ');
+            Separator sep = SeparateEmails;
 
-            //получение строки с почтой
-            foreach(string mail in words)
-            {
-                if (SeparateEmails(mail) != string.Empty)
-                    mails += " " + mail;
-            }
+            using (StreamReader sr = new StreamReader(new BufferedStream(File.OpenRead(path + readFileName), 10 * 1024 * 1024)))
 
-            //запись в новый файл
-            WriteInFaleTXT(mails, $"{path}\\mails.txt");
-
-            Console.ReadLine();
+            WriteInFaleTXT(sr, path + writeFileName, sep);
         }
 
         /// <summary> Записать текст в файл. </summary>
-        /// <param name="mails">Текст для записи.</param>
+        /// <param name="sr">StreamReader</param>
         /// <param name="path">Путь к файлу.</param>
-        static void WriteInFaleTXT(string mails, string path)
-        {
-            try
-            {
-                using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
-                {
-                    sw.WriteLine(mails);
-                }
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
-
-        /// <summary> Прочитать текст из файла. </summary>
-        /// <param name="path">Путь к файлу.</param>
-        /// <returns>Текст из файла.</returns>
-        static string ReadFileTXT(string path)
+        /// <param name="sep">Метод, обрабытывающий строку.</param>
+        static void WriteInFaleTXT(StreamReader sr, string path, Separator sep)
         {
             string line = string.Empty;
             try
             {
-                using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
+                using (StreamWriter sw = new StreamWriter(new BufferedStream(File.OpenWrite(path), 10*1024*1024)))
                 {
-                    line = sr.ReadLine();
+                    while((line = sr.ReadLine()) != null)
+                    {
+                        //тут можно было просто вызывать метод SeparateEmails(line),
+                        //но мне почему-то не понтарвилось, оставил с делегатом
+                        sw.WriteLine(sep(line));
+                    }
                 }
             }
             catch(Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-
-            return line;
         }
 
         /// <summary> Получить адрес почты. </summary>
         /// <param name="s">Строка для поиска адресов.</param>
-        /// <returns>Адрес почты или пустая строка.</returns>
+        /// <returns>Адрес почты.</returns>
         static string SeparateEmails(string s)
         {
-            if (s.Contains('@'))
-                return s;
-            else
-                return string.Empty;
+            return s.Split(" & ")[1];
         }
     }
 }
