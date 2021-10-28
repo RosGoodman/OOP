@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BuildingsCreator.HashTable;
+using System;
 
 namespace BuildingsCreator
 {
@@ -6,15 +7,13 @@ namespace BuildingsCreator
     {
         static void Main(string[] args)
         {
-            Building building1 = new Building(20f, 7, 200, 6);
-            Building building2 = new Building();
+            //Creator<Building> creator = new Creator<Building>();
+            Creator<Building>.CarteBuild(20, 7, 200, 6);
+            var foundBuild = Creator<Building>.GetBuilding(1);
 
-            Console.WriteLine(building1.BuildingNumb);
-            Console.WriteLine(building2.BuildingNumb);
+            //Console.WriteLine(foundBuild.GetHeightOfFloor());
 
-            Console.WriteLine(building1.GetHeightOfFloor());
-
-            Console.ReadKey();
+            Console.Read();
         }
     }
 }

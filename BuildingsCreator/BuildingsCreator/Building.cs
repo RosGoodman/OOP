@@ -47,10 +47,7 @@ namespace BuildingsCreator
 
         #region Ctors
 
-        public Building()
-        {
-            BuildingNumb = GenerateBuildNumb();
-        }
+        private Building() { }
 
         public Building(float bHeight, int floorsCount, int apartCount, int entrancesCount)
         {
