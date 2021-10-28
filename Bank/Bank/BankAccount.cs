@@ -34,7 +34,7 @@ namespace Bank
         #region Ctors
 
         /// <summary> Создать экземпляр класса BankAccount. </summary>
-        public BankAccount() { AccountNumb = GenerateAccNumb(); }
+        public BankAccount() => AccountNumb = GenerateAccNumb();
 
         /// <summary>Создать экземпляр класса BankAccount.</summary>
         /// <param name="balance">Текущий баланс для счета.</param>
@@ -81,11 +81,7 @@ namespace Bank
 
         /// <summary>Положить сумму на счет.</summary>
         /// <param name="sum">Сумма, которая будет добавлена на счет.</param>
-        public decimal AddSum(decimal sum)
-        {
-            _Balance += sum;
-            return _Balance;
-        }
+        public decimal AddSum(decimal sum) => _Balance += sum;
 
         /// <summary>Снять сумму со счета.</summary>
         /// <param name="sum">Сумма, которая будет снята со счета.</param>
@@ -97,8 +93,7 @@ namespace Bank
                 return _Balance;
             }
 
-            _Balance -= sum;
-            return _Balance;
+            return _Balance -= sum;
         }
 
         /// <summary>Получить строку с данными об аккаунте.</summary>
