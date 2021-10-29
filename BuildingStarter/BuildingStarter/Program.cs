@@ -1,8 +1,8 @@
-﻿
+﻿using System;
+using BuildingsCreator;
 using BuildingsCreator.Fctory;
-using System;
 
-namespace BuildingsCreator
+namespace BuildingStarter
 {
     class Program
     {

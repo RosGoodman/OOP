@@ -17,6 +17,8 @@ namespace BuildingsCreator.HashTable
             items = new T[size];
         }
 
+        #region HashTableMethodth
+
         /// <summary> Добавить экземпляр класса в таблицу. </summary>
         /// <param name="item"> Класс T. </param>
         /// <param name="key"> Ключ для записи. </param>
@@ -64,5 +66,7 @@ namespace BuildingsCreator.HashTable
         {
             return item.GetHashCode() % items.Length;
         }
+
+        #endregion
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace BuildingsCreator.Models
 {
-    internal interface IBuilding
+    public interface IBuilding
     {
         private static int _LastNumb;
 

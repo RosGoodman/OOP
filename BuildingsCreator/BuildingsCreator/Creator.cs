@@ -4,7 +4,7 @@ using BuildingsCreator.Models;
 
 namespace BuildingsCreator
 {
-    class Creator
+    public class Creator
     {
         private static HashTable<IBuilding> _HashTable;
         private static IBuilding _Building;

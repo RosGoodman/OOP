@@ -3,7 +3,7 @@ using BuildingsCreator.Models;
 
 namespace BuildingsCreator.Fctory
 {
-    class ConcreteFactory : IAbstractFactory
+    public class ConcreteFactory : IAbstractFactory
     {
         /// <summary> Создать здание. </summary>
         /// <param name="bHeight"> Высота здания. </param>
