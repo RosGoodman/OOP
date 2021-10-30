@@ -34,7 +34,7 @@ namespace Bank
         #region Ctors
 
         /// <summary> Создать экземпляр класса BankAccount. </summary>
-        public BankAccount() { AccountNumb = GenerateAccNumb(); }
+        public BankAccount() => AccountNumb = GenerateAccNumb();
 
         /// <summary>Создать экземпляр класса BankAccount.</summary>
         /// <param name="balance">Текущий баланс для счета.</param>
@@ -66,17 +66,22 @@ namespace Bank
 
         #region AccountMethods
 
-        /// <summary>Метод генерирует новый номер счета.</summary>
+        /// <summary> Получить перевод с указанного счета. </summary>
+        /// <param name="senderAccount">Счет отправитель перевода.</param>
+        /// <param name="sum">Сумма перевода.</param>
+        public void ReceiveMoneyTransfer(BankAccount senderAccount, decimal sum)
+        {
+            senderAccount.WithdrawSum(sum);
+            this.AddSum(sum);
+        }
+
+        /// <summary>Генерировать новый номер счета.</summary>
         /// <returns>Новый номер счета.</returns>
         public static ulong GenerateAccNumb() => _PrevAccNumb++;
 
         /// <summary>Положить сумму на счет.</summary>
         /// <param name="sum">Сумма, которая будет добавлена на счет.</param>
-        public decimal AddSum(decimal sum)
-        {
-            _Balance += sum;
-            return _Balance;
-        }
+        public decimal AddSum(decimal sum) => _Balance += sum;
 
         /// <summary>Снять сумму со счета.</summary>
         /// <param name="sum">Сумма, которая будет снята со счета.</param>
@@ -88,8 +93,7 @@ namespace Bank
                 return _Balance;
             }
 
-            _Balance -= sum;
-            return _Balance;
+            return _Balance -= sum;
         }
 
         /// <summary>Получить строку с данными об аккаунте.</summary>

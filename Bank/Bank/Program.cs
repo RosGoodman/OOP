@@ -6,21 +6,18 @@ namespace Bank
     {
         static void Main(string[] args)
         {
-            // 1 пустой
+            // 1 аккаунт
             BankAccount account = new BankAccount();
             WorkWithAccount(account);
 
-            // 2 тип аккаунта
-            account = new BankAccount(AccountType.Correspondent);
-            WorkWithAccount(account);
+            // 2 аккаунт
+            BankAccount account2 = new BankAccount(AccountType.Correspondent);
+            WorkWithAccount(account2);
 
-            // 3 баланс
-            account = new BankAccount(156M);
-            WorkWithAccount(account);
-
-            // 4 баланс и тип аккаунта
-            account = new BankAccount(AccountType.Settlement, 298.3M);
-            WorkWithAccount(account);
+            //перевод
+            account.ReceiveMoneyTransfer(account2, 333.3m);
+            Console.WriteLine(account.ToString());
+            Console.WriteLine(account2.ToString());
 
             Console.ReadLine();
         }
@@ -29,15 +26,7 @@ namespace Bank
         /// <param name="account">Обрабатываемый счет.</param>
         private static void WorkWithAccount(BankAccount account)
         {
-            Console.WriteLine(account.ToString());
-
-            account.AddSum(123.4M);
-            Console.WriteLine(account.ToString());
-
-            account.WithdrawSum(100M);
-            Console.WriteLine(account.ToString());
-
-            account.WithdrawSum(100M);
+            account.AddSum(1000M);
             Console.WriteLine(account.ToString());
 
             Console.WriteLine("------------------------------------------");
