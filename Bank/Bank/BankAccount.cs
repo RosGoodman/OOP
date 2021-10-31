@@ -82,7 +82,7 @@ namespace Bank
         {
             lock (_Locker)
             {
-                return ++_PrevAccNumb;
+                return _PrevAccNumb++;
             }
         }
 
