@@ -24,8 +24,8 @@ namespace BuildingStarter
 
             Creator.RemoveBuilding(1);
 
-            foundBuild = Creator.GetBuilding(1);
-            foundBuild2 = Creator.GetBuilding(2);
+            //foundBuild = Creator.GetBuilding(1);
+            //foundBuild2 = Creator.GetBuilding(2);
 
             Console.WriteLine($"Хэш-таблица содержит здание №1: {Creator.Contain(1)}");
             Console.WriteLine($"Хэш-таблица содержит здание №2: {Creator.Contain(2)}");
