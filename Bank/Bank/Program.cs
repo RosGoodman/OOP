@@ -16,8 +16,8 @@ namespace Bank
 
             //перевод
             account.ReceiveMoneyTransfer(account2, 333.3m);
-            Console.WriteLine(account.ToString());
-            Console.WriteLine(account2.ToString());
+            Console.WriteLine(account);
+            Console.WriteLine(account2);
 
             Console.ReadLine();
         }
@@ -27,7 +27,7 @@ namespace Bank
         private static void WorkWithAccount(BankAccount account)
         {
             account.AddSum(1000M);
-            Console.WriteLine(account.ToString());
+            Console.WriteLine(account);
 
             Console.WriteLine("------------------------------------------");
         }

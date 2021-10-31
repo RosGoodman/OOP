@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user252\\Desktop\\Prog C Sharp\\Geek\\HomeWorks\\ООП\\OOP\\Bank\\Task3\\Task3.csproj": {}
+    "C:\\Users\\T1007\\Desktop\\Методички\\Основы ООП\\HomeWorks\\OOP\\Bank\\Task3\\Task3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user252\\Desktop\\Prog C Sharp\\Geek\\HomeWorks\\ООП\\OOP\\Bank\\Task3\\Task3.csproj": {
+    "C:\\Users\\T1007\\Desktop\\Методички\\Основы ООП\\HomeWorks\\OOP\\Bank\\Task3\\Task3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user252\\Desktop\\Prog C Sharp\\Geek\\HomeWorks\\ООП\\OOP\\Bank\\Task3\\Task3.csproj",
+        "projectUniqueName": "C:\\Users\\T1007\\Desktop\\Методички\\Основы ООП\\HomeWorks\\OOP\\Bank\\Task3\\Task3.csproj",
         "projectName": "Task3",
-        "projectPath": "C:\\Users\\user252\\Desktop\\Prog C Sharp\\Geek\\HomeWorks\\ООП\\OOP\\Bank\\Task3\\Task3.csproj",
-        "packagesPath": "C:\\Users\\user252\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user252\\Desktop\\Prog C Sharp\\Geek\\HomeWorks\\ООП\\OOP\\Bank\\Task3\\obj\\",
+        "projectPath": "C:\\Users\\T1007\\Desktop\\Методички\\Основы ООП\\HomeWorks\\OOP\\Bank\\Task3\\Task3.csproj",
+        "packagesPath": "C:\\Users\\T1007\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\T1007\\Desktop\\Методички\\Основы ООП\\HomeWorks\\OOP\\Bank\\Task3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\user252\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\T1007\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -28,6 +29,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

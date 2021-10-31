@@ -77,7 +77,7 @@ namespace Bank
 
         /// <summary>Генерировать новый номер счета.</summary>
         /// <returns>Новый номер счета.</returns>
-        public static ulong GenerateAccNumb() => _PrevAccNumb++;
+        public ulong GenerateAccNumb() => _PrevAccNumb++;
 
         /// <summary>Положить сумму на счет.</summary>
         /// <param name="sum">Сумма, которая будет добавлена на счет.</param>
@@ -89,8 +89,7 @@ namespace Bank
         {
             if(_Balance < sum)
             {
-                Console.WriteLine("Insufficient funds in the account.");
-                return _Balance;
+                throw new InvalidOperationException("Insufficient funds in the account.");
             }
 
             return _Balance -= sum;
