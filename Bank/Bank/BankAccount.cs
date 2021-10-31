@@ -5,6 +5,7 @@ namespace Bank
     class BankAccount
     {
         private static ulong _PrevAccNumb = 10000000000000000000;
+        private static readonly object _Locker = new();
 
         private readonly ulong _AccountNumb;
         private decimal _Balance;
@@ -77,7 +78,13 @@ namespace Bank
 
         /// <summary>Генерировать новый номер счета.</summary>
         /// <returns>Новый номер счета.</returns>
-        public ulong GenerateAccNumb() => _PrevAccNumb++;
+        public static ulong GenerateAccNumb()
+        {
+            lock (_Locker)
+            {
+                return ++_PrevAccNumb;
+            }
+        }
 
         /// <summary>Положить сумму на счет.</summary>
         /// <param name="sum">Сумма, которая будет добавлена на счет.</param>
