@@ -6,7 +6,6 @@ namespace OOP_Basic.Lesson5
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
         }
     }
 }
