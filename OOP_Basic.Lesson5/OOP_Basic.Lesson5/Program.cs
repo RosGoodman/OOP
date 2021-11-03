@@ -6,6 +6,11 @@ namespace OOP_Basic.Lesson5
     {
         static void Main(string[] args)
         {
+            RationalNumbers numb = new RationalNumbers(123, 5);
+
+            Console.WriteLine(numb.ToString());
+
+            Console.Read();
         }
     }
 }
