@@ -2,7 +2,7 @@
 
 namespace BuildingsCreator.Fctory
 {
-    internal interface IAbstractFactory
+    public interface IAbstractFactory
     {
         /// <summary> Создать здание. </summary>
         /// <param name="bHeight"> Высота здания. </param>
