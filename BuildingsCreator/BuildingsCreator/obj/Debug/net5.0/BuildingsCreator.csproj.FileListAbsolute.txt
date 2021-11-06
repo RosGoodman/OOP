@@ -33,3 +33,15 @@ C:\Users\T1007\Desktop\Методички\Основы ООП\HomeWorks\OOP\OOP\
 C:\Users\T1007\Desktop\Методички\Основы ООП\HomeWorks\OOP\OOP\BuildingsCreator\BuildingsCreator\obj\Debug\net5.0\BuildingsCreator.dll
 C:\Users\T1007\Desktop\Методички\Основы ООП\HomeWorks\OOP\OOP\BuildingsCreator\BuildingsCreator\obj\Debug\net5.0\ref\BuildingsCreator.dll
 C:\Users\T1007\Desktop\Методички\Основы ООП\HomeWorks\OOP\OOP\BuildingsCreator\BuildingsCreator\obj\Debug\net5.0\BuildingsCreator.pdb
+D:\CSharp\Методички\Основы ООП\HomeWorks\OOP\BuildingsCreator\BuildingsCreator\bin\Debug\net5.0\BuildingsCreator.deps.json
+D:\CSharp\Методички\Основы ООП\HomeWorks\OOP\BuildingsCreator\BuildingsCreator\bin\Debug\net5.0\BuildingsCreator.dll
+D:\CSharp\Методички\Основы ООП\HomeWorks\OOP\BuildingsCreator\BuildingsCreator\bin\Debug\net5.0\ref\BuildingsCreator.dll
+D:\CSharp\Методички\Основы ООП\HomeWorks\OOP\BuildingsCreator\BuildingsCreator\bin\Debug\net5.0\BuildingsCreator.pdb
+D:\CSharp\Методички\Основы ООП\HomeWorks\OOP\BuildingsCreator\BuildingsCreator\obj\Debug\net5.0\BuildingsCreator.GeneratedMSBuildEditorConfig.editorconfig
+D:\CSharp\Методички\Основы ООП\HomeWorks\OOP\BuildingsCreator\BuildingsCreator\obj\Debug\net5.0\BuildingsCreator.AssemblyInfoInputs.cache
+D:\CSharp\Методички\Основы ООП\HomeWorks\OOP\BuildingsCreator\BuildingsCreator\obj\Debug\net5.0\BuildingsCreator.AssemblyInfo.cs
+D:\CSharp\Методички\Основы ООП\HomeWorks\OOP\BuildingsCreator\BuildingsCreator\obj\Debug\net5.0\BuildingsCreator.csproj.CoreCompileInputs.cache
+D:\CSharp\Методички\Основы ООП\HomeWorks\OOP\BuildingsCreator\BuildingsCreator\obj\Debug\net5.0\BuildingsCreator.dll
+D:\CSharp\Методички\Основы ООП\HomeWorks\OOP\BuildingsCreator\BuildingsCreator\obj\Debug\net5.0\ref\BuildingsCreator.dll
+D:\CSharp\Методички\Основы ООП\HomeWorks\OOP\BuildingsCreator\BuildingsCreator\obj\Debug\net5.0\BuildingsCreator.pdb
+D:\CSharp\Методички\Основы ООП\HomeWorks\OOP\BuildingsCreator\BuildingsCreator\obj\Debug\net5.0\BuildingsCreator.csproj.AssemblyReference.cache

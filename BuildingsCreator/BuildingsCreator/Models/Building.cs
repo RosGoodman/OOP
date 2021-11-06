@@ -89,6 +89,14 @@ namespace BuildingsCreator
         /// <returns> Номер здания. </returns>
         public static int GenerateBuildNumb() => ++_LastNumb;
 
+        /// <summary> Получить кол-во квартир в парадной (среднее). </summary>
+        /// <returns> Кол-во квартир в парадной. </returns>
+        public int GetNumberOfApartmentsInTheEntrance() => _NumbOfApartment / _NumbOfEntrances;
+
+        /// <summary> Получить кол-во квартир на этаже (среднее). </summary>
+        /// <returns> Кол-во квартир на этаже. </returns>
+        public int GetNumberOfApartmentInTheFloor() => _NumbOfApartment / _NumbOfFloors;
+
         #endregion
     }
 }

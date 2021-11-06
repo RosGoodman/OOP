@@ -19,6 +19,11 @@ namespace BuildingStarter
             Console.WriteLine($"Высота одного этажа: {foundBuild.GetHeightOfFloor()}");
             Console.WriteLine($"Высота одного этажа: {foundBuild2.GetHeightOfFloor()}");
 
+            //получение кол-ва квартир на этаже (среднее)
+            Console.WriteLine($"Количество квартир на этаже: {foundBuild.GetNumberOfApartmentInTheFloor()}");
+            //получение кол-ва квартир в парадной (среднее)
+            Console.WriteLine($"Количество квартир на этаже: {foundBuild.GetNumberOfApartmentsInTheEntrance()}");
+
             //проверка удаления зданий из хэш-таблицы
             Console.WriteLine($"Хэш-таблица содержит здание №1: {Creator<IBuilding>.Contain(1)}");
             Console.WriteLine("Удаление здания №1.");

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\T1007\\Desktop\\Методички\\Основы ООП\\HomeWorks\\OOP\\OOP\\BuildingsCreator\\BuildingsCreator\\BuildingsCreator.csproj": {}
+    "D:\\CSharp\\Методички\\Основы ООП\\HomeWorks\\OOP\\BuildingsCreator\\BuildingsCreator\\BuildingsCreator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\T1007\\Desktop\\Методички\\Основы ООП\\HomeWorks\\OOP\\OOP\\BuildingsCreator\\BuildingsCreator\\BuildingsCreator.csproj": {
+    "D:\\CSharp\\Методички\\Основы ООП\\HomeWorks\\OOP\\BuildingsCreator\\BuildingsCreator\\BuildingsCreator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\T1007\\Desktop\\Методички\\Основы ООП\\HomeWorks\\OOP\\OOP\\BuildingsCreator\\BuildingsCreator\\BuildingsCreator.csproj",
+        "projectUniqueName": "D:\\CSharp\\Методички\\Основы ООП\\HomeWorks\\OOP\\BuildingsCreator\\BuildingsCreator\\BuildingsCreator.csproj",
         "projectName": "BuildingsCreator",
-        "projectPath": "C:\\Users\\T1007\\Desktop\\Методички\\Основы ООП\\HomeWorks\\OOP\\OOP\\BuildingsCreator\\BuildingsCreator\\BuildingsCreator.csproj",
+        "projectPath": "D:\\CSharp\\Методички\\Основы ООП\\HomeWorks\\OOP\\BuildingsCreator\\BuildingsCreator\\BuildingsCreator.csproj",
         "packagesPath": "C:\\Users\\T1007\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\T1007\\Desktop\\Методички\\Основы ООП\\HomeWorks\\OOP\\OOP\\BuildingsCreator\\BuildingsCreator\\obj\\",
+        "outputPath": "D:\\CSharp\\Методички\\Основы ООП\\HomeWorks\\OOP\\BuildingsCreator\\BuildingsCreator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
