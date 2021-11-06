@@ -24,6 +24,8 @@ namespace OOP_Basic.Lesson5
         /// <returns>Результат проверки на равенство.</returns>
         public static bool operator ==(RationalNumbers numb1, RationalNumbers numb2)
         {
+            decimal n1 = (decimal)numb1._Numerator / numb1._Denomenator;
+            decimal n2 = (decimal)numb2._Numerator / numb1._Denomenator;
             return (decimal)numb1._Numerator / numb1._Denomenator == (decimal)numb2._Numerator / numb2._Denomenator;
         }
 
@@ -34,67 +36,6 @@ namespace OOP_Basic.Lesson5
         public static bool operator !=(RationalNumbers numb1, RationalNumbers numb2)
         {
             return (decimal)numb1._Numerator / numb1._Denomenator != (decimal)numb2._Numerator / numb2._Denomenator;
-        }
-
-        /// <summary> Проверить равенство двух чисел. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Int32.</param>
-        /// <returns>Результат проверки на равенство.</returns>
-        public static bool operator ==(RationalNumbers numb1, int numb2)
-        {
-            //при делении на int обрезается остаток, по этому проверка.
-            if (numb1._Numerator % numb1._Denomenator != 0) return false;
-            
-            return numb1._Numerator / numb1._Denomenator == numb2;
-        }
-
-        /// <summary> Проверить неравенство двух чисел. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Int32.</param>
-        /// <returns>Результат проверки на неравенство.</returns>
-        public static bool operator !=(RationalNumbers numb1, int numb2)
-        {
-            //при делении на int обрезается остаток, по этому проверка.
-            if (numb1._Numerator % numb1._Denomenator != 0) return true;
-
-            return numb1._Numerator / numb1._Denomenator != numb2;
-        }
-
-        /// <summary> Проверить равенство двух чисел. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Float.</param>
-        /// <returns>Результат проверки на равенство.</returns>
-        public static bool operator ==(RationalNumbers numb1, float numb2)
-        {
-            float numb = (float)numb1._Numerator / numb1._Denomenator;
-            return numb == numb2;
-        }
-
-        /// <summary> Проверить неравенство двух чисел. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Float.</param>
-        /// <returns>Результат проверки на неравенство.</returns>
-        public static bool operator !=(RationalNumbers numb1, float numb2)
-        {
-            return (float)numb1._Numerator / numb1._Denomenator != numb2;
-        }
-
-        /// <summary> Проверить равенство двух чисел. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Decimal.</param>
-        /// <returns>Результат проверки на равенство.</returns>
-        public static bool operator ==(RationalNumbers numb1, decimal numb2)
-        {
-            return (decimal)numb1._Numerator / numb1._Denomenator == numb2;
-        }
-
-        /// <summary> Проверить неравенство двух чисел. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Decimal.</param>
-        /// <returns>Результат проверки на неравенство.</returns>
-        public static bool operator !=(RationalNumbers numb1, decimal numb2)
-        {
-            return (decimal)numb1._Numerator / numb1._Denomenator != numb2;
         }
 
         #endregion
@@ -147,60 +88,6 @@ namespace OOP_Basic.Lesson5
             return (decimal)numb1._Numerator / numb1._Denomenator > (decimal)numb2._Numerator / numb2._Denomenator;
         }
 
-        /// <summary> Проверить неравенство. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Int.</param>
-        /// <returns> Результат проверки на неравенство. </returns>
-        public static bool operator <(RationalNumbers numb1, int numb2)
-        {
-            return (decimal)numb1._Numerator / numb1._Denomenator < numb2;
-        }
-
-        /// <summary> Проверить неравенство. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Int.</param>
-        /// <returns> Результат проверки на неравенство. </returns>
-        public static bool operator >(RationalNumbers numb1, int numb2)
-        {
-            return (decimal)numb1._Numerator / numb1._Denomenator > numb2;
-        }
-
-        /// <summary> Проверить неравенство. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Float.</param>
-        /// <returns> Результат проверки на неравенство. </returns>
-        public static bool operator <(RationalNumbers numb1, float numb2)
-        {
-            return (float)numb1._Numerator / numb1._Denomenator < numb2;
-        }
-
-        /// <summary> Проверить неравенство. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Float.</param>
-        /// <returns> Результат проверки на неравенство. </returns>
-        public static bool operator >(RationalNumbers numb1, float numb2)
-        {
-            return (float)numb1._Numerator / numb1._Denomenator > numb2;
-        }
-
-        /// <summary> Проверить неравенство. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Decimal.</param>
-        /// <returns> Результат проверки на неравенство. </returns>
-        public static bool operator <(RationalNumbers numb1, decimal numb2)
-        {
-            return (decimal)numb1._Numerator / numb1._Denomenator < numb2;
-        }
-
-        /// <summary> Проверить неравенство. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Decimal.</param>
-        /// <returns> Результат проверки на неравенство. </returns>
-        public static bool operator >(RationalNumbers numb1, decimal numb2)
-        {
-            return (decimal)numb1._Numerator / numb1._Denomenator > numb2;
-        }
-
         #endregion
 
         #region <= >=
@@ -223,73 +110,79 @@ namespace OOP_Basic.Lesson5
             return (decimal)numb1._Numerator / numb1._Denomenator >= (decimal)numb2._Numerator / numb2._Denomenator;
         }
 
-        /// <summary> Меньше либо равно. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Int.</param>
-        /// <returns> Результат проверки. </returns>
-        public static bool operator <=(RationalNumbers numb1, int numb2)
-        {
-
-            return (decimal)numb1._Numerator / numb1._Denomenator <= numb2;
-        }
-
-        /// <summary> Больше либо равно. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Int.</param>
-        /// <returns> Результат проверки. </returns>
-        public static bool operator >=(RationalNumbers numb1, int numb2)
-        {
-            return (decimal)numb1._Numerator / numb1._Denomenator >= numb2;
-        }
-
-        /// <summary> Меньше либо равно. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Float.</param>
-        /// <returns> Результат проверки. </returns>
-        public static bool operator <=(RationalNumbers numb1, float numb2)
-        {
-            return (float)numb1._Numerator / numb1._Denomenator <= numb2;
-        }
-
-        /// <summary> Больше либо равно. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Float.</param>
-        /// <returns> Результат проверки. </returns>
-        public static bool operator >=(RationalNumbers numb1, float numb2)
-        {
-            return (float)numb1._Numerator / numb1._Denomenator >= numb2;
-        }
-
-        /// <summary> Меньше либо равно. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Decimal.</param>
-        /// <returns> Результат проверки. </returns>
-        public static bool operator <=(RationalNumbers numb1, decimal numb2)
-        {
-            return (decimal)numb1._Numerator / numb1._Denomenator <= numb2;
-        }
-
-        /// <summary> Больше либо равно. </summary>
-        /// <param name="numb1">Рациональное число.</param>
-        /// <param name="numb2">Decimal.</param>
-        /// <returns> Результат проверки. </returns>
-        public static bool operator >=(RationalNumbers numb1, decimal numb2)
-        {
-            return (decimal)numb1._Numerator / numb1._Denomenator >= numb2;
-        }
-
         #endregion
 
         #region +-
 
-        public static bool operator +(RationalNumbers numb1, float numb2)
+        /// <summary> Получить результат сложения. </summary>
+        /// <param name="numb1">Рациональное число.</param>
+        /// <param name="numb2">Рациональное число.</param>
+        /// <returns>Результат.</returns>
+        public static RationalNumbers operator +(RationalNumbers numb1, RationalNumbers numb2)
         {
-            return numb1 + numb2;
+            if(numb1._Denomenator == numb2._Denomenator)
+            {
+                numb1._Numerator = numb1._Numerator + numb2._Numerator;
+            }
+            else
+            {
+                //приведение
+                numb1._Numerator = numb1._Numerator * numb2._Denomenator;
+                numb1._Denomenator = numb1._Denomenator * numb2._Denomenator;
+                //сложение
+                numb1._Numerator = numb1._Numerator + numb2._Numerator;
+            }
+
+            //деление числителя и знаменателя на общее кратное.
+            DivideByCommonMultiple(numb1);
+
+            return numb1;
         }
 
-        public static bool operator -(RationalNumbers numb1, float numb2)
+        /// <summary> Разделить числитель из наменатель на общее кратное. </summary>
+        /// <param name="numb"> RationalNumbers </param>
+        /// <returns> Результат. </returns>
+        private static RationalNumbers DivideByCommonMultiple(RationalNumbers numb)
         {
-            return numb1 - numb2;
+            for (int i = 2; i < 6; i++)
+            {
+                int remainder1 = numb._Numerator % i;
+                int remainder2 = numb._Denomenator % i;
+
+                if (remainder1 == 0 & remainder2 == 0)
+                {
+                    numb._Numerator = numb._Numerator / i;
+                    numb._Denomenator = numb._Denomenator / i;
+                    i = 1;
+                }
+            }
+
+            return numb;
+        }
+
+        /// <summary> Получить результат вычитания. </summary>
+        /// <param name="numb1">Рациональное число.</param>
+        /// <param name="numb2">Рациональное число.</param>
+        /// <returns>Результат.</returns>
+        public static RationalNumbers operator -(RationalNumbers numb1, RationalNumbers numb2)
+        {
+            if (numb1._Denomenator == numb2._Denomenator)
+            {
+                numb1._Numerator = numb1._Numerator - numb2._Numerator;
+            }
+            else
+            {
+                //приведение
+                numb1._Numerator = numb1._Numerator * numb2._Denomenator;
+                numb1._Denomenator = numb1._Denomenator * numb2._Denomenator;
+                //сложение
+                numb1._Numerator = numb1._Numerator - numb2._Numerator;
+            }
+
+            //деление числителя и знаменателя на общее кратное.
+            DivideByCommonMultiple(numb1);
+
+            return numb1;
         }
 
         #endregion
