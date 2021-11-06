@@ -221,9 +221,9 @@ namespace Test.NUnit.RatioalNumbers
             bool equal3 = _Numb5 > _Numb3;
 
             //assert
-            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
-            Assert.IsFalse(equal2, "Должно быть неверное равенство.");
-            Assert.IsTrue(equal3, "Должно быть верное равенство.");
+            Assert.IsFalse(equal1, "Должно быть неверное неравенство.");
+            Assert.IsFalse(equal2, "Должно быть неверное неравенство.");
+            Assert.IsTrue(equal3, "Должно быть верное неравенство.");
         }
 
         [Test]
@@ -235,9 +235,9 @@ namespace Test.NUnit.RatioalNumbers
             bool equal3 = _Numb3 > _NumbInt;
 
             //assert
-            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
-            Assert.IsFalse(equal2, "Должно быть неверное равенство.");
-            Assert.IsTrue(equal3, "Должно быть верное равенство.");
+            Assert.IsFalse(equal1, "Должно быть неверное неравенство.");
+            Assert.IsFalse(equal2, "Должно быть неверное неравенство.");
+            Assert.IsTrue(equal3, "Должно быть верное неравенство.");
         }
 
         [Test]
@@ -249,9 +249,9 @@ namespace Test.NUnit.RatioalNumbers
             bool equal3 = _Numb5 > _NumbFloat;
 
             //assert
-            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
-            Assert.IsFalse(equal2, "Должно быть неверное равенство.");
-            Assert.IsTrue(equal3, "Должно быть верное равенство.");
+            Assert.IsFalse(equal1, "Должно быть неверное неравенство.");
+            Assert.IsFalse(equal2, "Должно быть неверное неравенство.");
+            Assert.IsTrue(equal3, "Должно быть верное неравенство.");
         }
 
         [Test]
@@ -263,9 +263,9 @@ namespace Test.NUnit.RatioalNumbers
             bool equal3 = _Numb5 > _NumbDecimal;
 
             //assert
-            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
-            Assert.IsFalse(equal2, "Должно быть неверное равенство.");
-            Assert.IsTrue(equal3, "Должно быть верное равенство.");
+            Assert.IsFalse(equal1, "Должно быть неверное неравенство.");
+            Assert.IsFalse(equal2, "Должно быть неверное неравенство.");
+            Assert.IsTrue(equal3, "Должно быть верное неравенство.");
         }
 
         #endregion
@@ -281,9 +281,9 @@ namespace Test.NUnit.RatioalNumbers
             bool equal3 = _Numb5 < _Numb3;
 
             //assert
-            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
-            Assert.IsTrue(equal2, "Должно быть верное равенство.");
-            Assert.IsFalse(equal3, "Должно быть неверное равенство.");
+            Assert.IsFalse(equal1, "Должно быть неверное неравенство.");
+            Assert.IsTrue(equal2, "Должно быть верное неравенство.");
+            Assert.IsFalse(equal3, "Должно быть неверное неравенство.");
         }
 
         [Test]
@@ -295,9 +295,9 @@ namespace Test.NUnit.RatioalNumbers
             bool equal3 = _Numb3 < _NumbInt;
 
             //assert
-            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
-            Assert.IsTrue(equal2, "Должно быть верное равенство.");
-            Assert.IsFalse(equal3, "Должно быть неверное равенство.");
+            Assert.IsFalse(equal1, "Должно быть неверное неравенство.");
+            Assert.IsTrue(equal2, "Должно быть верное неравенство.");
+            Assert.IsFalse(equal3, "Должно быть неверное неравенство.");
         }
 
         [Test]
@@ -309,9 +309,9 @@ namespace Test.NUnit.RatioalNumbers
             bool equal3 = _Numb5 < _NumbFloat;
 
             //assert
-            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
-            Assert.IsTrue(equal2, "Должно быть верное равенство.");
-            Assert.IsFalse(equal3, "Должно быть неверное равенство.");
+            Assert.IsFalse(equal1, "Должно быть неверное неравенство.");
+            Assert.IsTrue(equal2, "Должно быть верное неравенство.");
+            Assert.IsFalse(equal3, "Должно быть неверное неравенство.");
         }
 
         [Test]
@@ -323,9 +323,133 @@ namespace Test.NUnit.RatioalNumbers
             bool equal3 = _Numb5 < _NumbDecimal;
 
             //assert
-            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
-            Assert.IsTrue(equal2, "Должно быть верное равенство.");
-            Assert.IsFalse(equal3, "Должно быть неверное равенство.");
+            Assert.IsFalse(equal1, "Должно быть неверное неравенство.");
+            Assert.IsTrue(equal2, "Должно быть верное неравенство.");
+            Assert.IsFalse(equal3, "Должно быть неверное неравенство.");
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Tests <= >=
+
+        #region Tests MoreOrEqual
+
+        [Test]
+        public void Test_MoreOrEqual_RatNumbAndRatNumb()
+        {
+            //act
+            bool equal1 = _Numb3 >= _Numb4;
+            bool equal2 = _Numb3 >= _Numb5;
+            bool equal3 = _Numb5 >= _Numb3;
+
+            //assert
+            Assert.IsTrue(equal1, "Должно быть верное выражение.");
+            Assert.IsFalse(equal2, "Должно быть неверное выражение.");
+            Assert.IsTrue(equal3, "Должно быть верное выражение.");
+        }
+
+        [Test]
+        public void Test_MoreOrEqual_RatNumbAndInt()
+        {
+            //act
+            bool equal1 = _Numb1 >= _NumbInt;
+            bool equal2 = _Numb2 >= _NumbInt;
+            bool equal3 = _Numb3 >= _NumbInt;
+
+            //assert
+            Assert.IsTrue(equal1, "Должно быть верное выражение.");
+            Assert.IsFalse(equal2, "Должно быть неверное выражение.");
+            Assert.IsTrue(equal3, "Должно быть верное выражение.");
+        }
+
+        [Test]
+        public void Test_MoreOrEqual_RatNumbAndFloat()
+        {
+            //act
+            bool equal1 = _Numb3 >= _NumbFloat;
+            bool equal2 = _Numb2 >= _NumbFloat;
+            bool equal3 = _Numb5 >= _NumbFloat;
+
+            //assert
+            Assert.IsTrue(equal1, "Должно быть верное выражение.");
+            Assert.IsFalse(equal2, "Должно быть неверное выражение.");
+            Assert.IsTrue(equal3, "Должно быть верное выражение.");
+        }
+
+        [Test]
+        public void Test_MoreOrEqual_RatNumbAndDecimal()
+        {
+            //act
+            bool equal1 = _Numb3 >= _NumbDecimal;
+            bool equal2 = _Numb2 >= _NumbDecimal;
+            bool equal3 = _Numb5 >= _NumbDecimal;
+
+            //assert
+            Assert.IsTrue(equal1, "Должно быть верное выражение.");
+            Assert.IsFalse(equal2, "Должно быть неверное выражение.");
+            Assert.IsTrue(equal3, "Должно быть верное выражение.");
+        }
+
+        #endregion
+
+        #region Tests LessOrEqual
+
+        [Test]
+        public void Test_LessOrEqual_RatNumbAndRatNumb()
+        {
+            //act
+            bool equal1 = _Numb3 <= _Numb4;
+            bool equal2 = _Numb3 <= _Numb5;
+            bool equal3 = _Numb5 <= _Numb3;
+
+            //assert
+            Assert.IsTrue(equal1, "Должно быть верное выражение.");
+            Assert.IsTrue(equal2, "Должно быть верное выражение.");
+            Assert.IsFalse(equal3, "Должно быть неверное выражение.");
+        }
+
+        [Test]
+        public void Test_LessOrEqual_RatNumbAndInt()
+        {
+            //act
+            bool equal1 = _Numb1 <= _NumbInt;
+            bool equal2 = _Numb2 <= _NumbInt;
+            bool equal3 = _Numb3 <= _NumbInt;
+
+            //assert
+            Assert.IsTrue(equal1, "Должно быть верное выражение.");
+            Assert.IsTrue(equal2, "Должно быть верное выражение.");
+            Assert.IsFalse(equal3, "Должно быть неверное выражение.");
+        }
+
+        [Test]
+        public void Test_LessOrEqual_RatNumbAndFloat()
+        {
+            //act
+            bool equal1 = _Numb3 <= _NumbFloat;
+            bool equal2 = _Numb2 <= _NumbFloat;
+            bool equal3 = _Numb5 <= _NumbFloat;
+
+            //assert
+            Assert.IsTrue(equal1, "Должно быть верное выражение.");
+            Assert.IsTrue(equal2, "Должно быть верное выражение.");
+            Assert.IsFalse(equal3, "Должно быть неверное выражение.");
+        }
+
+        [Test]
+        public void Test_LessOrEqual_RatNumbAndDecimal()
+        {
+            //act
+            bool equal1 = _Numb3 <= _NumbDecimal;
+            bool equal2 = _Numb2 <= _NumbDecimal;
+            bool equal3 = _Numb5 <= _NumbDecimal;
+
+            //assert
+            Assert.IsTrue(equal1, "Должно быть верное выражение.");
+            Assert.IsTrue(equal2, "Должно быть верное выражение.");
+            Assert.IsFalse(equal3, "Должно быть неверное выражение.");
         }
 
         #endregion
