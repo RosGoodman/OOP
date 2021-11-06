@@ -3,7 +3,7 @@ using System;
 
 namespace OOP_Basic.Lesson5
 {
-    struct RationalNumbers
+    struct RationalNumbers : IEquatable<RationalNumbers>
     {
         private int _Numerator;
 
@@ -18,51 +18,94 @@ namespace OOP_Basic.Lesson5
 
         #region == !=
 
+        /// <summary> Проверить равенство двух чисел. </summary>
+        /// <param name="numb1">Рациональное число.</param>
+        /// <param name="numb2">Рациональное число.</param>
+        /// <returns>Результат проверки на равенство.</returns>
         public static bool operator ==(RationalNumbers numb1, RationalNumbers numb2)
         {
-            return numb1 == numb2;
+            return numb1._Numerator / numb1._Denomenator == numb2._Numerator / numb2._Denomenator;
         }
 
+        /// <summary> Проверить неравенство двух чисел. </summary>
+        /// <param name="numb1">Рациональное число.</param>
+        /// <param name="numb2">Рациональное число.</param>
+        /// <returns>Результат проверки на неравенство.</returns>
         public static bool operator !=(RationalNumbers numb1, RationalNumbers numb2)
         {
-            return numb1 != numb2;
+            return numb1._Numerator / numb1._Denomenator != numb2._Numerator / numb2._Denomenator;
         }
 
+        /// <summary> Проверить равенство двух чисел. </summary>
+        /// <param name="numb1">Рациональное число.</param>
+        /// <param name="numb2">Int32.</param>
+        /// <returns>Результат проверки на равенство.</returns>
         public static bool operator ==(RationalNumbers numb1, int numb2)
         {
-            return numb1 == numb2;
+            return numb1._Numerator / numb1._Denomenator == numb2;
         }
 
+        /// <summary> Проверить неравенство двух чисел. </summary>
+        /// <param name="numb1">Рациональное число.</param>
+        /// <param name="numb2">Int32.</param>
+        /// <returns>Результат проверки на неравенство.</returns>
         public static bool operator !=(RationalNumbers numb1, int numb2)
         {
-            return numb1 != numb2;
+            return numb1._Numerator / numb1._Denomenator != numb2;
         }
 
+        /// <summary> Проверить равенство двух чисел. </summary>
+        /// <param name="numb1">Рациональное число.</param>
+        /// <param name="numb2">Float.</param>
+        /// <returns>Результат проверки на равенство.</returns>
         public static bool operator ==(RationalNumbers numb1, float numb2)
         {
-            return numb1 == numb2;
+            return numb1._Numerator / numb1._Denomenator == numb2;
         }
 
+        /// <summary> Проверить неравенство двух чисел. </summary>
+        /// <param name="numb1">Рациональное число.</param>
+        /// <param name="numb2">Float.</param>
+        /// <returns>Результат проверки на неравенство.</returns>
         public static bool operator !=(RationalNumbers numb1, float numb2)
         {
-            return numb1 != numb2;
+            return numb1._Numerator / numb1._Denomenator != numb2;
         }
 
+        /// <summary> Проверить равенство двух чисел. </summary>
+        /// <param name="numb1">Рациональное число.</param>
+        /// <param name="numb2">Decimal.</param>
+        /// <returns>Результат проверки на равенство.</returns>
         public static bool operator ==(RationalNumbers numb1, decimal numb2)
         {
-            return numb1 == numb2;
+            return numb1._Numerator / numb1._Denomenator == numb2;
         }
 
+        /// <summary> Проверить неравенство двух чисел. </summary>
+        /// <param name="numb1">Рациональное число.</param>
+        /// <param name="numb2">Decimal.</param>
+        /// <returns>Результат проверки на неравенство.</returns>
         public static bool operator !=(RationalNumbers numb1, decimal numb2)
         {
-            return numb1 != numb2;
+            return numb1._Numerator / numb1._Denomenator != numb2;
         }
 
         #endregion
 
         #region equals
 
-        public override bool Equals(object obj)
+        /// <summary> Проверить равенство двух чисел. </summary>
+        /// <param name="other"> Рациональное число. </param>
+        /// <returns> Результат проверки на равенство. </returns>
+        public bool Equals(RationalNumbers other)
+        {
+            return (_Numerator == other._Numerator) && (_Denomenator == other._Denomenator);
+        }
+
+        /// <summary> Проверить равенство двух чисел. </summary>
+        /// <param name="other"> Рациональное число. </param>
+        /// <returns> Результат проверки на равенство. </returns>
+        public override bool Equals(object? obj)
         {
             if ((obj == null) || !this.GetType().Equals(obj.GetType()))
             {
