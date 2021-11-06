@@ -210,7 +210,125 @@ namespace Test.NUnit.RatioalNumbers
 
         #region Tests <>
 
+        #region Tests More
 
+        [Test]
+        public void Test_More_RatNumbAndRatNumb()
+        {
+            //act
+            bool equal1 = _Numb3 > _Numb4;
+            bool equal2 = _Numb3 > _Numb5;
+            bool equal3 = _Numb5 > _Numb3;
+
+            //assert
+            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
+            Assert.IsFalse(equal2, "Должно быть неверное равенство.");
+            Assert.IsTrue(equal3, "Должно быть верное равенство.");
+        }
+
+        [Test]
+        public void Test_More_RatNumbAndInt()
+        {
+            //act
+            bool equal1 = _Numb1 > _NumbInt;
+            bool equal2 = _Numb2 > _NumbInt;
+            bool equal3 = _Numb3 > _NumbInt;
+
+            //assert
+            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
+            Assert.IsFalse(equal2, "Должно быть неверное равенство.");
+            Assert.IsTrue(equal3, "Должно быть верное равенство.");
+        }
+
+        [Test]
+        public void Test_More_RatNumbAndFloat()
+        {
+            //act
+            bool equal1 = _Numb3 > _NumbFloat;
+            bool equal2 = _Numb2 > _NumbFloat;
+            bool equal3 = _Numb5 > _NumbFloat;
+
+            //assert
+            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
+            Assert.IsFalse(equal2, "Должно быть неверное равенство.");
+            Assert.IsTrue(equal3, "Должно быть верное равенство.");
+        }
+
+        [Test]
+        public void Test_More_RatNumbAndDecimal()
+        {
+            //act
+            bool equal1 = _Numb3 > _NumbDecimal;
+            bool equal2 = _Numb2 > _NumbDecimal;
+            bool equal3 = _Numb5 > _NumbDecimal;
+
+            //assert
+            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
+            Assert.IsFalse(equal2, "Должно быть неверное равенство.");
+            Assert.IsTrue(equal3, "Должно быть верное равенство.");
+        }
+
+        #endregion
+
+        #region Tests Less
+
+        [Test]
+        public void Test_Less_RatNumbAndRatNumb()
+        {
+            //act
+            bool equal1 = _Numb3 < _Numb4;
+            bool equal2 = _Numb3 < _Numb5;
+            bool equal3 = _Numb5 < _Numb3;
+
+            //assert
+            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
+            Assert.IsTrue(equal2, "Должно быть верное равенство.");
+            Assert.IsFalse(equal3, "Должно быть неверное равенство.");
+        }
+
+        [Test]
+        public void Test_Less_RatNumbAndInt()
+        {
+            //act
+            bool equal1 = _Numb1 < _NumbInt;
+            bool equal2 = _Numb2 < _NumbInt;
+            bool equal3 = _Numb3 < _NumbInt;
+
+            //assert
+            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
+            Assert.IsTrue(equal2, "Должно быть верное равенство.");
+            Assert.IsFalse(equal3, "Должно быть неверное равенство.");
+        }
+
+        [Test]
+        public void Test_Less_RatNumbAndFloat()
+        {
+            //act
+            bool equal1 = _Numb3 < _NumbFloat;
+            bool equal2 = _Numb2 < _NumbFloat;
+            bool equal3 = _Numb5 < _NumbFloat;
+
+            //assert
+            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
+            Assert.IsTrue(equal2, "Должно быть верное равенство.");
+            Assert.IsFalse(equal3, "Должно быть неверное равенство.");
+        }
+
+        [Test]
+        public void Test_Less_RatNumbAndDecimal()
+        {
+            //act
+            bool equal1 = _Numb3 < _NumbDecimal;
+            bool equal2 = _Numb2 < _NumbDecimal;
+            bool equal3 = _Numb5 < _NumbDecimal;
+
+            //assert
+            Assert.IsFalse(equal1, "Должно быть неверное равенство.");
+            Assert.IsTrue(equal2, "Должно быть верное равенство.");
+            Assert.IsFalse(equal3, "Должно быть неверное равенство.");
+        }
+
+        #endregion
 
         #endregion
     }
