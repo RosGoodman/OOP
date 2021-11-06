@@ -8,7 +8,7 @@ namespace OOP_Basic.Lesson5
         {
             //преобразуемые в целое
             RationalNumbers numb3 = new RationalNumbers(120, 5);
-            RationalNumbers numb4 = new RationalNumbers(120, 5);
+            //RationalNumbers numb4 = new RationalNumbers(120, 5);
             RationalNumbers numb5 = new RationalNumbers(30, 6);
 
             //не преобразуемые в целое
@@ -33,6 +33,12 @@ namespace OOP_Basic.Lesson5
             Console.WriteLine(numb.Equals(numb2));
             Console.WriteLine(numb.Equals(numb3));
             Console.WriteLine(numb.Equals(numb5));
+            Console.WriteLine("Equals int");
+            Console.WriteLine(numb.Equals(numb1));
+            Console.WriteLine("Equals float");
+            Console.WriteLine(numb.Equals(numb1));
+            Console.WriteLine("Equals decimal");
+            Console.WriteLine(numb.Equals(numb1));
 
             PrintLine();
 
@@ -45,5 +51,7 @@ namespace OOP_Basic.Lesson5
         {
             Console.WriteLine("_____________________________");
         }
+
+
     }
 }

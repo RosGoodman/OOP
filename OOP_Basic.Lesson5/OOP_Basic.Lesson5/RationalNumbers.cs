@@ -3,7 +3,7 @@ using System;
 
 namespace OOP_Basic.Lesson5
 {
-    struct RationalNumbers : IEquatable<RationalNumbers>
+    public struct RationalNumbers : IEquatable<RationalNumbers>
     {
         private int _Numerator;
 
@@ -42,6 +42,9 @@ namespace OOP_Basic.Lesson5
         /// <returns>Результат проверки на равенство.</returns>
         public static bool operator ==(RationalNumbers numb1, int numb2)
         {
+            //при делении на int обрезается остаток, по этому проверка.
+            if (numb1._Numerator % numb1._Denomenator != 0) return false;
+            
             return numb1._Numerator / numb1._Denomenator == numb2;
         }
 
@@ -51,6 +54,9 @@ namespace OOP_Basic.Lesson5
         /// <returns>Результат проверки на неравенство.</returns>
         public static bool operator !=(RationalNumbers numb1, int numb2)
         {
+            //при делении на int обрезается остаток, по этому проверка.
+            if (numb1._Numerator % numb1._Denomenator != 0) return true;
+
             return numb1._Numerator / numb1._Denomenator != numb2;
         }
 
@@ -60,7 +66,8 @@ namespace OOP_Basic.Lesson5
         /// <returns>Результат проверки на равенство.</returns>
         public static bool operator ==(RationalNumbers numb1, float numb2)
         {
-            return numb1._Numerator / numb1._Denomenator == numb2;
+            float numb = (float)numb1._Numerator / numb1._Denomenator;
+            return numb == numb2;
         }
 
         /// <summary> Проверить неравенство двух чисел. </summary>
@@ -69,7 +76,7 @@ namespace OOP_Basic.Lesson5
         /// <returns>Результат проверки на неравенство.</returns>
         public static bool operator !=(RationalNumbers numb1, float numb2)
         {
-            return numb1._Numerator / numb1._Denomenator != numb2;
+            return (float)numb1._Numerator / numb1._Denomenator != numb2;
         }
 
         /// <summary> Проверить равенство двух чисел. </summary>
@@ -78,7 +85,7 @@ namespace OOP_Basic.Lesson5
         /// <returns>Результат проверки на равенство.</returns>
         public static bool operator ==(RationalNumbers numb1, decimal numb2)
         {
-            return numb1._Numerator / numb1._Denomenator == numb2;
+            return (decimal)numb1._Numerator / numb1._Denomenator == numb2;
         }
 
         /// <summary> Проверить неравенство двух чисел. </summary>
@@ -87,7 +94,7 @@ namespace OOP_Basic.Lesson5
         /// <returns>Результат проверки на неравенство.</returns>
         public static bool operator !=(RationalNumbers numb1, decimal numb2)
         {
-            return numb1._Numerator / numb1._Denomenator != numb2;
+            return (decimal)numb1._Numerator / numb1._Denomenator != numb2;
         }
 
         #endregion
