@@ -15,6 +15,8 @@ namespace Test.NUnit.RatioalNumbers
         private RationalNumbers _Numb4;
         private RationalNumbers _Numb5;
 
+        private object obj = new object();
+
         private int _NumbInt;
         private float _NumbFloat;
         private decimal _NumbDecimal;
@@ -139,6 +141,76 @@ namespace Test.NUnit.RatioalNumbers
             Assert.IsFalse(equal1, "Должны быть неравны.");
             Assert.IsTrue(equal2, "Должны быть равны.");
         }
+
+        #endregion
+
+        #region Tests Equals
+
+        [Test]
+        public void Test_Equals_RatNumbAndRatNumb()
+        {
+            //act
+            bool equal1 = _Numb3.Equals(_Numb4);
+            bool equal2 = _Numb3.Equals(_Numb5);
+
+            //assert
+            Assert.IsTrue(equal1, "Должны быть равны.");
+            Assert.IsFalse(equal2, "Должны быть неравны.");
+        }
+
+        [Test]
+        public void Test_Equals_RatNumbAndInt()
+        {
+            //act
+            bool equal1 = _Numb1.Equals(_NumbInt);
+            bool equal2 = _Numb3.Equals(_NumbInt);
+
+            //assert
+            Assert.IsFalse(equal1, "Должны быть неравны.");
+            Assert.IsFalse(equal2, "Должны быть неравны.");
+        }
+
+        [Test]
+        public void Test_Equals_RatNumbAndFloat()
+        {
+            //act
+            bool equal1 = _Numb3.Equals(_NumbFloat);
+            bool equal2 = _Numb1.Equals(_NumbFloat);
+
+            //assert
+            Assert.IsFalse(equal1, "Должны быть неравны.");
+            Assert.IsFalse(equal2, "Должны быть неравны.");
+        }
+
+        [Test]
+        public void Test_Equals_RatNumbAndDecimal()
+        {
+            //act
+            bool equal1 = _Numb3.Equals(_NumbDecimal);
+            bool equal2 = _Numb1.Equals(_NumbDecimal);
+
+            //assert
+            Assert.IsFalse(equal1, "Должны быть неравны.");
+            Assert.IsFalse(equal2, "Должны быть неравны.");
+        }
+
+        [Test]
+        public void Test_Equals_RatNumbAndObject()
+        {
+            //act
+            bool equal1 = _Numb3.Equals(obj);   //пустой объект
+            bool equal2 = _Numb3.Equals((object)_Numb4);    //объект, который можно конвертировать
+
+            //assert
+            Assert.IsFalse(equal1, "Должны быть неравны.");
+            Assert.IsTrue(equal2, "Должны быть равны.");
+        }
+
+        #endregion
+
+        #region Tests <>
+
+
 
         #endregion
     }
