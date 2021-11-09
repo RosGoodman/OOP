@@ -129,10 +129,7 @@ namespace OOP_Basic.Lesson5
             else
             {
                 //приведение к общему знаменателю
-                newNumb._Numerator *= numb2._Denomenator;
-                newNumb._Denomenator *= numb2._Denomenator;
-                added._Numerator *= numb1._Denomenator;
-                added._Denomenator *= numb1._Denomenator;
+                (newNumb, added) = LeadToACommonDenominator(numb1, numb2);
                 //сложение
                 newNumb._Numerator += added._Numerator;
             }
@@ -158,10 +155,7 @@ namespace OOP_Basic.Lesson5
             else
             {
                 //приведение
-                newNumb._Numerator *= numb2._Denomenator;
-                newNumb._Denomenator *= numb2._Denomenator;
-                added._Numerator *= numb1._Denomenator;
-                added._Denomenator *= numb1._Denomenator;
+                (newNumb, added) = LeadToACommonDenominator(numb1, numb2);
                 //сложение
                 newNumb._Numerator -= added._Numerator;
             }
@@ -280,12 +274,59 @@ namespace OOP_Basic.Lesson5
 
         #region % * /
 
+            #region %
+
+        /// <summary> Получить остаток от деления (округление до 6 знаков после запятой). </summary>
+        /// <param name="numb1"> RationalNumbers. </param>
+        /// <param name="numb2"> RationalNumbers. </param>
+        /// <returns> Остаток от деления. </returns>
         public static RationalNumbers operator %(RationalNumbers numb1, RationalNumbers numb2)
         {
-
-
-            return new RationalNumbers(numb1._Numerator + numb1._Denomenator, numb1._Denomenator);
+            decimal remains = decimal.Round((decimal)numb1 % (decimal)numb2, 6);
+            return GetToFractionalNumb(remains);
         }
+
+        /// <summary> Получить остаток от деления (округление до 6 знаков после запятой). </summary>
+        /// <param name="numb1"> RationalNumbers. </param>
+        /// <param name="numb2"> Int. </param>
+        /// <returns> Остаток от деления. </returns>
+        public static RationalNumbers operator %(RationalNumbers numb1, int numb2)
+        {
+            decimal remains = decimal.Round((decimal)numb1 % (decimal)numb2, 6);
+            return GetToFractionalNumb(remains);
+        }
+
+        /// <summary> Получить остаток от деления (округление до 6 знаков после запятой). </summary>
+        /// <param name="numb1"> RationalNumbers. </param>
+        /// <param name="numb2"> Float. </param>
+        /// <returns> Остаток от деления. </returns>
+        public static RationalNumbers operator %(RationalNumbers numb1, float numb2)
+        {
+            decimal remains = decimal.Round((decimal)numb1 % (decimal)numb2, 6);
+            return GetToFractionalNumb(remains);
+        }
+
+        /// <summary> Получить остаток от деления (округление до 6 знаков после запятой). </summary>
+        /// <param name="numb1"> RationalNumbers. </param>
+        /// <param name="numb2"> Decimal. </param>
+        /// <returns> Остаток от деления. </returns>
+        public static RationalNumbers operator %(RationalNumbers numb1, decimal numb2)
+        {
+            decimal remains = decimal.Round((decimal)numb1 % (decimal)numb2, 6);
+            return GetToFractionalNumb(remains);
+        }
+
+        #endregion
+
+        #region *
+
+        //public static RationalNumbers operator *(RationalNumbers numb1, RationalNumbers numb2)
+        //{
+        //    decimal remains = decimal.Round((decimal)numb1 % (decimal)numb2, 6);
+        //    return GetToFractionalNumb(remains);
+        //}
+
+        #endregion
 
         #endregion
 
@@ -360,7 +401,7 @@ namespace OOP_Basic.Lesson5
         /// <summary> Получить RationalNumber из числа с плавающей точкой. </summary>
         /// <param name="numb"> Число с плавающей точкой. </param>
         /// <returns> RationalNumber. </returns>
-        public static RationalNumbers GetToFractionalNumb(decimal numb)
+        private static RationalNumbers GetToFractionalNumb(decimal numb)
         {
             int divisor = 1;
             //увеличение числа до целого с получением делителя
@@ -379,9 +420,26 @@ namespace OOP_Basic.Lesson5
         /// <param name="a"> Число 1. </param>
         /// <param name="b"> Число 2. </param>
         /// <returns> Общий делитель. </returns>
-        static int GetCommonDivider(int a, int b)
+        private static int GetCommonDivider(int a, int b)
         {
             return b == 0 ? a : GetCommonDivider(b, a % b);
+        }
+
+        /// <summary> Получить два рациональных числа с общим знаменателем. </summary>
+        /// <param name="numb1"> RationalNumbers. </param>
+        /// <param name="numb2"> RationalNumbers. </param>
+        /// <returns> Result (tuple). </returns>
+        private static (RationalNumbers, RationalNumbers) LeadToACommonDenominator(RationalNumbers numb1, RationalNumbers numb2)
+        {
+            RationalNumbers newNumb = numb1;
+            RationalNumbers added = numb2;
+            //перемножение дроби на делитель другой дроби.
+            newNumb._Numerator *= numb2._Denomenator;
+            newNumb._Denomenator *= numb2._Denomenator;
+            added._Numerator *= numb1._Denomenator;
+            added._Denomenator *= numb1._Denomenator;
+
+            return (newNumb, added);
         }
 
         #endregion

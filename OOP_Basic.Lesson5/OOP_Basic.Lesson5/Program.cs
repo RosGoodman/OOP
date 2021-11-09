@@ -8,9 +8,7 @@ namespace OOP_Basic.Lesson5
         {
             //К сожалению при попытке проверять написанное тут возникало много ошибок, 
             //по этому написал тесты.
-            int j = 12;
-            int i = ++j*2;
-            int k = j++*2;
+            RationalNumbers n1 = new RationalNumbers(1, 2) % new RationalNumbers(1, 3);
 
             Console.Read();
         }
