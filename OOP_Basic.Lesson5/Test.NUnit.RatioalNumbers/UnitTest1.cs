@@ -205,16 +205,10 @@ namespace Test.NUnit.RatioalNumbers
         public void Test_Addition_RatNumbAndRatNumb()
         {
             //act
-            bool ansver1 = (_Numb2 + _Numb2) == new RationalNumbers(60, 6);
-            bool ansver2 = (int)_Numb2 + _NumbInt == 29;
-            //bool ansver3 = _Numb5 + _Numb3;
-            //bool ansver4 = _Numb5 + _Numb3;
+            bool ansver1 = _Numb2 + _Numb2 == new RationalNumbers(60, 6);
 
             //assert
             Assert.IsTrue(ansver1, "Должно быть верное выражение.");
-            Assert.IsTrue(ansver2, "Должно быть верное выражение.");
-            //Assert.IsTrue(ansver1, "Должно быть верное выражение.");
-            //Assert.IsTrue(ansver2, "Должно быть верное выражение.");
         }
 
         [Test]
@@ -222,15 +216,108 @@ namespace Test.NUnit.RatioalNumbers
         {
             //act
             bool ansver1 = (_Numb2 - _Numb2) == new RationalNumbers(0, 6);
-            bool ansver2 = (int)_Numb2 - _NumbInt == -19;
-            //bool ansver3 = _Numb5 + _Numb3;
-            //bool ansver4 = _Numb5 + _Numb3;
+
+            //assert
+            Assert.IsTrue(ansver1, "Должно быть верное выражение.");
+        }
+
+        [Test]
+        public void Test_Addition_RatNumbAndInt()
+        {
+            //act
+            bool ansver1 = _Numb2 + _NumbInt == new RationalNumbers(29, 1);
+
+            //assert
+            Assert.IsTrue(ansver1, "Должно быть верное выражение.");
+        }
+
+        [Test]
+        public void Test_Substruction_RatNumbAndInt()
+        {
+            //act
+            bool ansver1 = (_Numb2 - _NumbInt) == new RationalNumbers(-19, 1);
+
+            //assert
+            Assert.IsTrue(ansver1, "Должно быть верное выражение.");
+        }
+
+        [Test]
+        public void Test_Addition_RatNumbAndFloat()
+        {
+            //act
+            bool ansver1 = _Numb2 + _NumbFloat == new RationalNumbers(148, 5);
+
+            //assert
+            Assert.IsTrue(ansver1, "Должно быть верное выражение.");
+        }
+
+        [Test]
+        public void Test_Substruction_RatNumbAndFloat()
+        {
+            bool ansver1 = (_Numb2 - _NumbFloat) == new RationalNumbers(-98, 5);
+
+            //assert
+            Assert.IsTrue(ansver1, "Должно быть верное выражение.");
+        }
+
+        [Test]
+        public void Test_Addition_RatNumbAndDecimal()
+        {
+            //act
+            bool ansver1 = _Numb2 + _NumbDecimal == new RationalNumbers(148, 5);
+
+            //assert
+            Assert.IsTrue(ansver1, "Должно быть верное выражение.");
+        }
+
+        [Test]
+        public void Test_Substruction_RatNumbAndDecimal()
+        {
+            //act
+            bool ansver1 = (_Numb2 - _NumbDecimal) == new RationalNumbers(-98, 5);
+
+            //assert
+            Assert.IsTrue(ansver1, "Должно быть верное выражение.");
+        }
+
+        #endregion
+
+        #region ++ --
+
+        [Test]
+        public void Test_Increment_RatNumb()
+        {
+            //arrange
+            RationalNumbers chekingNumb = _Numb2;
+            RationalNumbers chekingNumb2 = _Numb2;
+
+            //act
+            RationalNumbers newRatinonal = chekingNumb++ + 1;
+            bool ansver1 = newRatinonal == new RationalNumbers(36, 6);
+            RationalNumbers newRatinonal2 = ++chekingNumb2 + 1;
+            bool ansver2 = newRatinonal2 == new RationalNumbers(42, 6);
 
             //assert
             Assert.IsTrue(ansver1, "Должно быть верное выражение.");
             Assert.IsTrue(ansver2, "Должно быть верное выражение.");
-            //Assert.IsTrue(ansver1, "Должно быть верное выражение.");
-            //Assert.IsTrue(ansver2, "Должно быть верное выражение.");
+        }
+
+        [Test]
+        public void Test_Decrement_RatNumb()
+        {
+            //arrange
+            RationalNumbers chekingNumb = _Numb2;
+            RationalNumbers chekingNumb2 = _Numb2;
+
+            //act
+            RationalNumbers newRatinonal = chekingNumb-- + 1;
+            bool ansver1 = newRatinonal == new RationalNumbers(36, 6);
+            RationalNumbers newRatinonal2 = --chekingNumb2 + 1;
+            bool ansver2 = newRatinonal2 == new RationalNumbers(30, 6);
+
+            //assert
+            Assert.IsTrue(ansver1, "Должно быть верное выражение.");
+            Assert.IsTrue(ansver2, "Должно быть верное выражение.");
         }
 
         #endregion
