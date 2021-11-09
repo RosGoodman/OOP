@@ -280,6 +280,12 @@ namespace OOP_Basic.Lesson5
 
         #region % * /
 
+        public static RationalNumbers operator %(RationalNumbers numb1, RationalNumbers numb2)
+        {
+
+
+            return new RationalNumbers(numb1._Numerator + numb1._Denomenator, numb1._Denomenator);
+        }
 
         #endregion
 
