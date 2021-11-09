@@ -215,7 +215,7 @@ namespace Test.NUnit.RationalNumbersTests
         public void Test_Substruction_RatNumbAndRatNumb()
         {
             //act
-            bool ansver1 = (_Numb2 - _Numb2) == new RationalNumbers(0, 6);
+            bool ansver1 = (_Numb2 - _Numb2) == new RationalNumbers(0, 0);
 
             //assert
             Assert.IsTrue(ansver1, "Должно быть верное выражение.");
@@ -318,118 +318,139 @@ namespace Test.NUnit.RationalNumbersTests
 
         #endregion
 
-        #region Tests %
+        #region Tests % / *
 
-        [Test]
-        public void Test_RemainderOfTheDivision_RatNumbByRatNumb()
-        {
-            //act
-            RationalNumbers newRatinonal = _Numb1 % _Numb2;
+            #region Tests %
 
-            //assert
-            Assert.AreEqual(newRatinonal, new RationalNumbers(4, 5), "Результ не соответствует ожидаемому.");
-        }
+            [Test]
+            public void Test_RemainderOfTheDivision_RatNumbByRatNumb()
+            {
+                //act
+                RationalNumbers newRatinonal = _Numb1 % _Numb2;
 
-        [Test]
-        public void Test_RemainderOfTheDivision_RatNumbByInt()
-        {
-            //act
-            RationalNumbers newRatinonal = _Numb1 % _NumbInt;
+                //assert
+                Assert.AreEqual(new RationalNumbers(4, 5), newRatinonal, "Результ не соответствует ожидаемому.");
+            }
 
-            //assert
-            Assert.AreEqual(newRatinonal, new RationalNumbers(0, 0), "Результ не соответствует ожидаемому.");
-        }
+            [Test]
+            public void Test_RemainderOfTheDivision_RatNumbByInt()
+            {
+                //act
+                RationalNumbers newRatinonal = _Numb1 % _NumbInt;
 
-        [Test]
-        public void Test_RemainderOfTheDivision_RatNumbByFloat()
-        {
-            //act
-            RationalNumbers newRatinonal = _Numb1 % _NumbFloat;
+                //assert
+                Assert.AreEqual(new RationalNumbers(0, 0), newRatinonal, "Результ не соответствует ожидаемому.");
+            }
 
-            //assert
-            Assert.AreEqual(newRatinonal, new RationalNumbers(120, 5), "Результ не соответствует ожидаемому.");
-        }
+            [Test]
+            public void Test_RemainderOfTheDivision_RatNumbByFloat()
+            {
+                //act
+                RationalNumbers newRatinonal = _Numb1 % _NumbFloat;
 
-        [Test]
-        public void Test_RemainderOfTheDivision_RatNumbByDecimal()
-        {
-            //act
-            RationalNumbers newRatinonal = _Numb1 % _NumbDecimal;
+                //assert
+                Assert.AreEqual(new RationalNumbers(24, 1), newRatinonal, "Результ не соответствует ожидаемому.");
+            }
 
-            //assert
-            Assert.AreEqual(newRatinonal, new RationalNumbers(120, 5), "Результ не соответствует ожидаемому.");
-        }
+            [Test]
+            public void Test_RemainderOfTheDivision_RatNumbByDecimal()
+            {
+                //act
+                RationalNumbers newRatinonal = _Numb1 % _NumbDecimal;
+
+                //assert
+                Assert.AreEqual(new RationalNumbers(24, 1), newRatinonal, "Результ не соответствует ожидаемому.");
+            }
+
+            #endregion
+
+            #region Tests *
+
+            [Test]
+            public void Test_Multiplication_RatNumbByRatNumb()
+            {
+                //act
+                RationalNumbers newRatinonal = _Numb1 * _Numb2;
+
+                //assert
+                Assert.AreEqual(new RationalNumbers(120, 1), newRatinonal, "Результ не соответствует ожидаемому.");
+            }
+
+            [Test]
+            public void Test_Multiplication_RatNumbByInt()
+            {
+                //act
+                RationalNumbers newRatinonal = _Numb1 * _NumbInt;
+
+                //assert
+                Assert.AreEqual(new RationalNumbers(576, 1), newRatinonal, "Результ не соответствует ожидаемому.");
+            }
+
+            [Test]
+            public void Test_Multiplication_RatNumbByFloat()
+            {
+                //act
+                RationalNumbers newRatinonal = _Numb1 * _NumbFloat;
+
+                //assert
+                Assert.AreEqual(new RationalNumbers(2952, 5), newRatinonal, "Результ не соответствует ожидаемому.");
+            }
+
+            [Test]
+            public void Test_Multiplication_RatNumbByDecimal()
+            {
+                //act
+                RationalNumbers newRatinonal = _Numb1 * _NumbDecimal;
+
+                //assert
+                Assert.AreEqual(new RationalNumbers(2952, 5), newRatinonal, "Результ не соответствует ожидаемому.");
+            }
 
         #endregion
 
-        #region Tests *
+            #region Tests /
 
         [Test]
-        public void Test_Multiplication_RatNumbByRatNumb()
+        public void Test_Divide_RatNumbByRatNumb()
         {
-
             //act
-            //RationalNumbers newRatinonal = chekingNumb++ + 1;
-            //RationalNumbers newRatinonal2 = ++chekingNumb2 + 1;
-
-            ////assert
-            //Assert.IsTrue(ansver1, "Должно быть верное выражение.");
-            //Assert.IsTrue(ansver2, "Должно быть верное выражение.");
-        }
-
-        [Test]
-        public void Test_Multiplication_RatNumbByInt()
-        {
-            //arrange
-            RationalNumbers chekingNumb = _Numb2;
-            RationalNumbers chekingNumb2 = _Numb2;
-
-            //act
-            RationalNumbers newRatinonal = chekingNumb++ + 1;
-            bool ansver1 = newRatinonal == new RationalNumbers(36, 6);
-            RationalNumbers newRatinonal2 = ++chekingNumb2 + 1;
-            bool ansver2 = newRatinonal2 == new RationalNumbers(42, 6);
+            RationalNumbers newRatinonal = _Numb1 / _Numb2;
 
             //assert
-            Assert.IsTrue(ansver1, "Должно быть верное выражение.");
-            Assert.IsTrue(ansver2, "Должно быть верное выражение.");
+            Assert.AreEqual(new RationalNumbers(24, 5), newRatinonal, "Результ не соответствует ожидаемому.");
         }
 
         [Test]
-        public void Test_Multiplication_RatNumbByFloat()
+        public void Test_Divide_RatNumbByInt()
         {
-            //arrange
-            RationalNumbers chekingNumb = _Numb2;
-            RationalNumbers chekingNumb2 = _Numb2;
-
             //act
-            RationalNumbers newRatinonal = chekingNumb++ + 1;
-            bool ansver1 = newRatinonal == new RationalNumbers(36, 6);
-            RationalNumbers newRatinonal2 = ++chekingNumb2 + 1;
-            bool ansver2 = newRatinonal2 == new RationalNumbers(42, 6);
+            RationalNumbers newRatinonal = _Numb1 / _NumbInt;
 
             //assert
-            Assert.IsTrue(ansver1, "Должно быть верное выражение.");
-            Assert.IsTrue(ansver2, "Должно быть верное выражение.");
+            Assert.AreEqual(new RationalNumbers(1, 1), newRatinonal, "Результ не соответствует ожидаемому.");
         }
 
         [Test]
-        public void Test_Multiplication_RatNumbByDecimal()
+        public void Test_Divide_RatNumbByFloat()
         {
-            //arrange
-            RationalNumbers chekingNumb = _Numb2;
-            RationalNumbers chekingNumb2 = _Numb2;
-
             //act
-            RationalNumbers newRatinonal = chekingNumb++ + 1;
-            bool ansver1 = newRatinonal == new RationalNumbers(36, 6);
-            RationalNumbers newRatinonal2 = ++chekingNumb2 + 1;
-            bool ansver2 = newRatinonal2 == new RationalNumbers(42, 6);
+            RationalNumbers newRatinonal = _Numb1 / _NumbFloat;
 
             //assert
-            Assert.IsTrue(ansver1, "Должно быть верное выражение.");
-            Assert.IsTrue(ansver2, "Должно быть верное выражение.");
+            Assert.AreEqual(new RationalNumbers(40, 41), newRatinonal, "Результ не соответствует ожидаемому.");
         }
+
+        [Test]
+        public void Test_Divide_RatNumbByDecimal()
+        {
+            //act
+            RationalNumbers newRatinonal = _Numb1 / _NumbDecimal;
+
+            //assert
+            Assert.AreEqual(new RationalNumbers(40, 41), newRatinonal, "Результ не соответствует ожидаемому.");
+        }
+
+            #endregion
 
         #endregion
     }

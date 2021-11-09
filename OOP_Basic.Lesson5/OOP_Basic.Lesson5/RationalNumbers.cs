@@ -284,10 +284,11 @@ namespace OOP_Basic.Lesson5
         public static RationalNumbers operator %(RationalNumbers numb1, RationalNumbers numb2)
         {
             decimal remains = (decimal)numb1 % (decimal)numb2;
-
             if (numb1 < numb2) remains *= numb1._Denomenator;
 
-            return new RationalNumbers((int)remains, numb1._Denomenator);
+            RationalNumbers newRational = new RationalNumbers((int)remains, numb1._Denomenator);
+                
+            return DivideByCommonMultiple(newRational);
         }
 
         /// <summary> Получить остаток от деления (округление до 6 знаков после запятой). </summary>
@@ -330,7 +331,8 @@ namespace OOP_Basic.Lesson5
         /// <returns> RationalNumbers. </returns>
         public static RationalNumbers operator *(RationalNumbers numb1, RationalNumbers numb2)
         {
-            return new RationalNumbers(numb1._Numerator * numb2._Numerator, numb1._Denomenator * numb2._Denomenator);
+            RationalNumbers newRational = new RationalNumbers(numb1._Numerator * numb2._Numerator, numb1._Denomenator * numb2._Denomenator);
+            return DivideByCommonMultiple(newRational);
         }
 
         /// <summary> Уманожить два числа. </summary>
@@ -339,8 +341,8 @@ namespace OOP_Basic.Lesson5
         /// <returns> RationalNumbers. </returns>
         public static RationalNumbers operator *(RationalNumbers numb1, int numb2)
         {
-            RationalNumbers numbRational = GetToFractionalNumb(numb2);
-            return new RationalNumbers(numb1._Numerator * numbRational._Numerator, numb1._Denomenator * numbRational._Denomenator);
+            RationalNumbers newRational = GetToFractionalNumb(numb2);
+            return numb1 * newRational;
         }
 
         /// <summary> Уманожить два числа. </summary>
@@ -349,8 +351,8 @@ namespace OOP_Basic.Lesson5
         /// <returns> RationalNumbers. </returns>
         public static RationalNumbers operator *(RationalNumbers numb1, float numb2)
         {
-            RationalNumbers numbRational = GetToFractionalNumb((decimal)numb2);
-            return new RationalNumbers(numb1._Numerator * numbRational._Numerator, numb1._Denomenator * numbRational._Denomenator);
+            RationalNumbers newRational = GetToFractionalNumb((decimal)numb2);
+            return numb1 * newRational;
         }
 
         /// <summary> Уманожить два числа. </summary>
@@ -359,8 +361,52 @@ namespace OOP_Basic.Lesson5
         /// <returns> RationalNumbers. </returns>
         public static RationalNumbers operator *(RationalNumbers numb1, decimal numb2)
         {
-            RationalNumbers numbRational = GetToFractionalNumb(numb2);
-            return new RationalNumbers(numb1._Numerator * numbRational._Numerator, numb1._Denomenator * numbRational._Denomenator);
+            RationalNumbers newRational = GetToFractionalNumb(numb2);
+            return numb1 * newRational;
+        }
+
+        #endregion
+
+            #region /
+
+        /// <summary> Разделить два числа. </summary>
+        /// <param name="numb1"> RationalNumbers. </param>
+        /// <param name="numb2"> RationalNumbers. </param>
+        /// <returns> RationalNumbers. </returns>
+        public static RationalNumbers operator /(RationalNumbers numb1, RationalNumbers numb2)
+        {
+            RationalNumbers newRational = new RationalNumbers(numb1._Numerator * numb2._Denomenator, numb1._Denomenator * numb2._Numerator);
+            return DivideByCommonMultiple(newRational);
+        }
+
+        /// <summary> Разделить два числа. </summary>
+        /// <param name="numb1"> RationalNumbers. </param>
+        /// <param name="numb2"> Int. </param>
+        /// <returns> RationalNumbers. </returns>
+        public static RationalNumbers operator /(RationalNumbers numb1, int numb2)
+        {
+            RationalNumbers newRational = GetToFractionalNumb(numb2);
+            return numb1 / newRational;
+        }
+
+        /// <summary> Разделить два числа. </summary>
+        /// <param name="numb1"> RationalNumbers. </param>
+        /// <param name="numb2"> Float. </param>
+        /// <returns> RationalNumbers. </returns>
+        public static RationalNumbers operator /(RationalNumbers numb1, float numb2)
+        {
+            RationalNumbers newRational = GetToFractionalNumb((decimal)numb2);
+            return numb1 / newRational;
+        }
+
+        /// <summary> Разделить два числа. </summary>
+        /// <param name="numb1"> RationalNumbers. </param>
+        /// <param name="numb2"> Decimal. </param>
+        /// <returns> RationalNumbers. </returns>
+        public static RationalNumbers operator /(RationalNumbers numb1, decimal numb2)
+        {
+            RationalNumbers newRational = GetToFractionalNumb(numb2);
+            return numb1 / newRational;
         }
 
             #endregion
@@ -369,7 +415,8 @@ namespace OOP_Basic.Lesson5
 
         #region GetHashCode
 
-        //метод переопределен для того, чтобы убрать предупреждение
+        /// <summary> Получить хэш-код RationalNumber. </summary>
+        /// <returns> Hash-code </returns>
         public override int GetHashCode()
         {
             return _Numerator.GetHashCode();
@@ -379,6 +426,8 @@ namespace OOP_Basic.Lesson5
 
         #region toString
 
+        /// <summary> Получить строчный вариант данных RationalNumber. </summary>
+        /// <returns> String. </returns>
         public override string ToString()
         {
             string str = String.Format(@"{0}/{1}", _Numerator, _Denomenator);
@@ -393,6 +442,7 @@ namespace OOP_Basic.Lesson5
         /// <param name="numb"> RationalNumber. </param>
         public static explicit operator int(RationalNumbers numb)
         {
+            if (numb._Numerator == 0) return 0;
             return Convert.ToInt32(numb._Numerator / numb._Denomenator);
         }
 
@@ -400,6 +450,7 @@ namespace OOP_Basic.Lesson5
         /// <param name="numb"> RationalNumber. </param>
         public static explicit operator float(RationalNumbers numb)
         {
+            if (numb._Numerator == 0) return 0;
             return (float)numb._Numerator / numb._Denomenator;
         }
 
@@ -407,6 +458,7 @@ namespace OOP_Basic.Lesson5
         /// <param name="numb"> RationalNumber. </param>
         public static explicit operator decimal(RationalNumbers numb)
         {
+            if (numb._Numerator == 0) return 0;
             return (decimal)numb._Numerator / numb._Denomenator;
         }
 
