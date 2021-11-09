@@ -12,6 +12,7 @@ namespace OOP_Basic.Lesson5
         public RationalNumbers(int num, int den)
         {
             if (den < 0) throw new Exception("Знаменатель должен быть натуральным числом.");
+            if (num == 0) den = 0;
             _Numerator = num;
             _Denomenator = den;
         }
@@ -282,8 +283,11 @@ namespace OOP_Basic.Lesson5
         /// <returns> Остаток от деления. </returns>
         public static RationalNumbers operator %(RationalNumbers numb1, RationalNumbers numb2)
         {
-            decimal remains = decimal.Round((decimal)numb1 % (decimal)numb2, 6);
-            return GetToFractionalNumb(remains);
+            decimal remains = (decimal)numb1 % (decimal)numb2;
+
+            if (numb1 < numb2) remains *= numb1._Denomenator;
+
+            return new RationalNumbers((int)remains, numb1._Denomenator);
         }
 
         /// <summary> Получить остаток от деления (округление до 6 знаков после запятой). </summary>
@@ -292,8 +296,8 @@ namespace OOP_Basic.Lesson5
         /// <returns> Остаток от деления. </returns>
         public static RationalNumbers operator %(RationalNumbers numb1, int numb2)
         {
-            decimal remains = decimal.Round((decimal)numb1 % (decimal)numb2, 6);
-            return GetToFractionalNumb(remains);
+            RationalNumbers newRatNumb = GetToFractionalNumb(numb2);
+            return numb1 % newRatNumb;
         }
 
         /// <summary> Получить остаток от деления (округление до 6 знаков после запятой). </summary>
@@ -302,8 +306,8 @@ namespace OOP_Basic.Lesson5
         /// <returns> Остаток от деления. </returns>
         public static RationalNumbers operator %(RationalNumbers numb1, float numb2)
         {
-            decimal remains = decimal.Round((decimal)numb1 % (decimal)numb2, 6);
-            return GetToFractionalNumb(remains);
+            RationalNumbers newRatNumb = GetToFractionalNumb((decimal)numb2);
+            return numb1 % newRatNumb;
         }
 
         /// <summary> Получить остаток от деления (округление до 6 знаков после запятой). </summary>
@@ -312,21 +316,54 @@ namespace OOP_Basic.Lesson5
         /// <returns> Остаток от деления. </returns>
         public static RationalNumbers operator %(RationalNumbers numb1, decimal numb2)
         {
-            decimal remains = decimal.Round((decimal)numb1 % (decimal)numb2, 6);
-            return GetToFractionalNumb(remains);
+            RationalNumbers newRatNumb = GetToFractionalNumb(numb2);
+            return numb1 % newRatNumb;
         }
 
         #endregion
 
-        #region *
+            #region *
 
-        //public static RationalNumbers operator *(RationalNumbers numb1, RationalNumbers numb2)
-        //{
-        //    decimal remains = decimal.Round((decimal)numb1 % (decimal)numb2, 6);
-        //    return GetToFractionalNumb(remains);
-        //}
+        /// <summary> Уманожить два числа. </summary>
+        /// <param name="numb1"> RationalNumbers. </param>
+        /// <param name="numb2"> RationalNumbers. </param>
+        /// <returns> RationalNumbers. </returns>
+        public static RationalNumbers operator *(RationalNumbers numb1, RationalNumbers numb2)
+        {
+            return new RationalNumbers(numb1._Numerator * numb2._Numerator, numb1._Denomenator * numb2._Denomenator);
+        }
 
-        #endregion
+        /// <summary> Уманожить два числа. </summary>
+        /// <param name="numb1"> RationalNumbers. </param>
+        /// <param name="numb2"> Int. </param>
+        /// <returns> RationalNumbers. </returns>
+        public static RationalNumbers operator *(RationalNumbers numb1, int numb2)
+        {
+            RationalNumbers numbRational = GetToFractionalNumb(numb2);
+            return new RationalNumbers(numb1._Numerator * numbRational._Numerator, numb1._Denomenator * numbRational._Denomenator);
+        }
+
+        /// <summary> Уманожить два числа. </summary>
+        /// <param name="numb1"> RationalNumbers. </param>
+        /// <param name="numb2"> Float. </param>
+        /// <returns> RationalNumbers. </returns>
+        public static RationalNumbers operator *(RationalNumbers numb1, float numb2)
+        {
+            RationalNumbers numbRational = GetToFractionalNumb((decimal)numb2);
+            return new RationalNumbers(numb1._Numerator * numbRational._Numerator, numb1._Denomenator * numbRational._Denomenator);
+        }
+
+        /// <summary> Уманожить два числа. </summary>
+        /// <param name="numb1"> RationalNumbers. </param>
+        /// <param name="numb2"> Decimal. </param>
+        /// <returns> RationalNumbers. </returns>
+        public static RationalNumbers operator *(RationalNumbers numb1, decimal numb2)
+        {
+            RationalNumbers numbRational = GetToFractionalNumb(numb2);
+            return new RationalNumbers(numb1._Numerator * numbRational._Numerator, numb1._Denomenator * numbRational._Denomenator);
+        }
+
+            #endregion
 
         #endregion
 

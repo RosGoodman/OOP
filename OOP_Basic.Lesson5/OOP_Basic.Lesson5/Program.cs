@@ -8,7 +8,7 @@ namespace OOP_Basic.Lesson5
         {
             //К сожалению при попытке проверять написанное тут возникало много ошибок, 
             //по этому написал тесты.
-            RationalNumbers n1 = new RationalNumbers(1, 2) % new RationalNumbers(1, 3);
+            float n1 = 24 % 24.6f;
 
             Console.Read();
         }
