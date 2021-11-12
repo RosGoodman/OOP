@@ -8,33 +8,8 @@ namespace Task2.Models
         private int _OX;
         private int _OY;
 
-        #region Properties
-
-        public Colore Colore
-        {
-            get => _Colore;
-            set => _Colore = value;
-        }
-        
-        public bool Hide
-        {
-            get => _Hide;
-            set => _Hide = value;
-        }
-        
-        public int OX
-        {
-            get => _OX;
-            set => _OX = value;
-        }
-        
-        public int OY
-        {
-            get => _OY;
-            set => _OY = value;
-        }
-
-        #endregion
+        public int OX { get => _OX;}
+        public int OY { get => _OY;}
 
         #region Ctors
 
@@ -50,6 +25,36 @@ namespace Task2.Models
 
         #endregion
 
+        #region Methods
 
+        public void Move(int offset, Direction direction)
+        {
+            switch (direction)
+            {
+                case Direction.Right:
+                    _OX += offset;
+                    break;
+                case Direction.Left:
+                    _OX -= offset;
+                    break;
+                case Direction.Up:
+                    _OY += offset;
+                    break;
+                case Direction.Down:
+                    _OY -= offset;
+                    break;
+            }
+        }
+
+        public void ChangeColor(Colore color) => _Colore = color;
+
+        public bool IsVisible() => _Hide;
+
+        public string Print()
+        {
+            return $"Цвет: {_Colore}, Скрыт: {_Hide}, Координата OX: {_OX}, Координата OY: {_OY}";
+        }
+
+        #endregion
     }
 }
