@@ -3,6 +3,7 @@ using System;
 
 namespace Bank
 {
+    /// <summary> Класс описывающий банковский аккаунт. </summary>
     class BankAccount : IEquatable<BankAccount>
     {
         private static ulong _PrevAccNumb = 10000000000000000000;
