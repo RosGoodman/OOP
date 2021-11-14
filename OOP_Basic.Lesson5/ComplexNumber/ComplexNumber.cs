@@ -1,0 +1,8 @@
+﻿
+namespace ComplexNumbers
+{
+    class ComplexNumber
+    {
+
+    }
+}

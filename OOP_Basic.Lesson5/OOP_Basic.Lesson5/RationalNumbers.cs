@@ -440,7 +440,7 @@ namespace OOP_Basic.Lesson5
 
         /// <summary> Преобразовать RationalNumber в Int. </summary>
         /// <param name="numb"> RationalNumber. </param>
-        public static explicit operator int(RationalNumbers numb)
+        public static implicit operator int(RationalNumbers numb)
         {
             if (numb._Numerator == 0) return 0;
             return Convert.ToInt32(numb._Numerator / numb._Denomenator);
@@ -448,7 +448,7 @@ namespace OOP_Basic.Lesson5
 
         /// <summary> Преобразовать RationalNumber в Float. </summary>
         /// <param name="numb"> RationalNumber. </param>
-        public static explicit operator float(RationalNumbers numb)
+        public static implicit operator float(RationalNumbers numb)
         {
             if (numb._Numerator == 0) return 0;
             return (float)numb._Numerator / numb._Denomenator;
@@ -456,7 +456,7 @@ namespace OOP_Basic.Lesson5
 
         /// <summary> Преобразовать RationalNumber в Decimal. </summary>
         /// <param name="numb"> RationalNumber. </param>
-        public static explicit operator decimal(RationalNumbers numb)
+        public static implicit operator decimal(RationalNumbers numb)
         {
             if (numb._Numerator == 0) return 0;
             return (decimal)numb._Numerator / numb._Denomenator;

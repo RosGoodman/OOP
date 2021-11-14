@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using OOP_Basic.Lesson5;
-using System;
 
 namespace Test.NUnit.RationalNumbersTests
 {
