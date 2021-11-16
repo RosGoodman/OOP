@@ -21,13 +21,13 @@ namespace Task2.Models
 
         /// <summary> Содать экземпляр фигуры. </summary>
         /// <param name="colore"> Цвет. </param>
-        /// <param name="hide"> Окружность скрыта (true/false). </param>
+        /// <param name="visible"> Окружность скрыта (true/false). </param>
         /// <param name="ox"> Координата оси ОХ. </param>
         /// <param name="oy"> Координата оси ОУ.</param>
-        public Figure(Colore colore, bool hide, int ox, int oy)
+        public Figure(Colore colore, bool visible, int ox, int oy)
         {
             _Colore = colore;
-            _Hide = hide;
+            _Visible = visible;
             _OX = ox;
             _OY = oy;
         }
