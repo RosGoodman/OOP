@@ -5,7 +5,7 @@ namespace Task2.Models
     internal class Figure
     {
         private Colore _Colore = Colore.white;
-        private bool _Hide = true;
+        private bool _Visible = true;
         private int _OX;
         private int _OY;
 
@@ -24,10 +24,10 @@ namespace Task2.Models
         /// <param name="hide"> Окружность скрыта (true/false). </param>
         /// <param name="ox"> Координата оси ОХ. </param>
         /// <param name="oy"> Координата оси ОУ.</param>
-        public Figure(Colore colore, bool hide, int ox, int oy)
+        public Figure(Colore colore, bool visible, int ox, int oy)
         {
             _Colore = colore;
-            _Hide = hide;
+            _Visible = visible;
             _OX = ox;
             _OY = oy;
         }
@@ -64,13 +64,13 @@ namespace Task2.Models
 
         /// <summary> Получить состояние видимости фигуры. </summary>
         /// <returns> Скрыт/показан (true/false). </returns>
-        public bool IsVisible() => _Hide;
+        public bool IsVisible() => _Visible;
 
         /// <summary> Получить строку с состоянием фигуры. </summary>
         /// <returns> Строка состояние. </returns>
         public string Print()
         {
-            return $"Цвет: {_Colore}, Скрыт: {_Hide}, Координата OX: {_OX}, Координата OY: {_OY}";
+            return $"Цвет: {_Colore}, Скрыт: {_Visible}, Координата OX: {_OX}, Координата OY: {_OY}";
         }
 
         #endregion

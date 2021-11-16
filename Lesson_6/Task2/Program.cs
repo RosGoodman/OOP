@@ -7,9 +7,9 @@ namespace Task2
     {
         static void Main(string[] args)
         {
-            Figure figure = new Figure(Colore.green, false, 1, 1);
-            Circle circle = new Circle(Colore.red, false, 2, 2, 13);
-            Rectangle rectangle = new Rectangle(Colore.red, false, 3, 4, 34, 15);
+            Figure figure = new Figure(Colore.green, true, 1, 1);
+            Circle circle = new Circle(Colore.red, true, 2, 2, 13);
+            Rectangle rectangle = new Rectangle(Colore.red, true, 3, 4, 34, 15);
 
             Console.WriteLine($"Информация о figure: {figure.Print()}");
             Console.WriteLine($"Информация о circle: {circle.Print()}");

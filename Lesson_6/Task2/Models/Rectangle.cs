@@ -9,13 +9,13 @@ namespace Task2.Models
 
         /// <summary> Содать экземпляр прямоугольника. </summary>
         /// <param name="colore"> Цвет. </param>
-        /// <param name="hide"> Окружность скрыта (true/false). </param>
+        /// <param name="visible"> Окружность скрыта (true/false). </param>
         /// <param name="ox"> Координата оси ОХ. </param>
         /// <param name="oy"> Координата оси ОУ.</param>
         /// <param name="height"> Высота прямоугольника. </param>
         /// <param name="width"> Ширина прямоугольника. </param>
-        public Rectangle(Colore colore, bool hide, int ox, int oy, int height, int width) :
-            base(colore, hide, ox, oy)
+        public Rectangle(Colore colore, bool visible, int ox, int oy, int height, int width) :
+            base(colore, visible, ox, oy)
         {
             _Height = height;
             _Width = width;
